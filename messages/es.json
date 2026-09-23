@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Jhonier Santana | Desarrollador Frontend",
+    "description": "Desarrollador de Software Frontend especializado en React, React Native y Node.js."
+  },
+  "a11y": {
+    "skipToContent": "Saltar al contenido principal"
+  },
+  "nav": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "about": "Sobre mí",
+    "contact": "Contacto",
+    "menu": "Abrir menú"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "Jhonier Santana",
+    "role": "Desarrollador de Software Frontend",
+    "tagline": "React · React Native · Node.js · TypeScript",
+    "summary": "Más de 2 años de experiencia diseñando, desarrollando y manteniendo aplicaciones web, móviles y de escritorio, con foco en UX/UI, arquitectura frontend escalable e integración de APIs REST.",
+    "cta": "Ver proyectos",
+    "cvLabel": "Descargar CV"
+  },
+  "experience": {
+    "title": "Experiencia",
+    "current": "Actual",
+    "items": [
+      {
+        "role": "Desarrollador de Software",
+        "company": "Seguridad Penta / Bartik",
+        "location": "Bogotá, Colombia",
+        "period": "Mayo 2025 - Actualidad",
+        "points": [
+          "Lideré mejoras de UX/UI en una suite de 5 aplicaciones web, móviles y de escritorio, optimizando flujos de trabajo clave.",
+          "Diseñé e implementé la arquitectura frontend de 4 aplicaciones SaaS, integrando APIs REST.",
+          "Dirigí la migración y actualización de dependencias críticas y ejecuté pruebas funcionales multiplataforma."
+        ]
+      },
+      {
+        "role": "Desarrollador Frontend",
+        "company": "Attendv / Betek",
+        "location": "Medellín, Colombia",
+        "period": "Mayo 2024 - Octubre 2024",
+        "points": [
+          "Desarrollé una aplicación web completa para servicios bajo demanda con React y Firebase.",
+          "Optimicé el rendimiento y el SEO de la aplicación mejorando velocidad de carga y visibilidad.",
+          "Configuré pipelines de CI/CD, automatizando el despliegue del equipo."
+        ]
+      },
+      {
+        "role": "Desarrollador de Software (Freelance)",
+        "company": "Autonomic Mind",
+        "location": "Medellín, Colombia",
+        "period": "Septiembre 2023 - Octubre 2023",
+        "points": [
+          "Desarrollé soluciones en múltiples lenguajes (Dart, Kotlin, R, Lua) aplicando programación funcional y recursión.",
+          "Implementé control de versiones con Git en un entorno colaborativo."
+        ]
+      },
+      {
+        "role": "Desarrollador de Software (Trainee)",
+        "company": "Holberton School",
+        "location": "Bogotá, Colombia",
+        "period": "Septiembre 2022 - Julio 2023",
+        "points": [
+          "Desarrollé proyectos Full-Stack con React, Python (Flask) y MySQL.",
+          "Apliqué pruebas unitarias y de integración para garantizar calidad y robustez del código.",
+          "Resolví más de 100 ejercicios de lógica, algoritmos y estructuras de datos."
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "title": "Habilidades técnicas",
+    "groups": [
+      {
+        "label": "Frontend",
+        "items": ["React.js", "React Native", "Electron.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "SASS", "Tailwind CSS", "Chakra UI"]
+      },
+      {
+        "label": "Gestión de estado",
+        "items": ["Redux", "TanStack Query"]
+      },
+      {
+        "label": "Backend y bases de datos",
+        "items": ["Node.js", "Python", "Flask", "Django", "MySQL", "APIs REST"]
+      },
+      {
+        "label": "Testing y QA",
+        "items": ["Pruebas funcionales", "Pruebas unitarias", "Documentación de bugs"]
+      },
+      {
+        "label": "Herramientas y metodologías",
+        "items": ["Git", "GitHub", "Scrum", "CI/CD"]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Casos de estudio de proyectos reales en los que he trabajado.",
+    "viewCase": "Ver caso de estudio"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "body": "Desarrollador de Software con más de 2 años de experiencia en el diseño, desarrollo y mantenimiento de aplicaciones web, móviles y de escritorio. Especializado en el ecosistema JavaScript y TypeScript, con enfoque en experiencia de usuario, integración de APIs REST, arquitectura frontend escalable y migración tecnológica.",
+    "education": "Formación académica",
+    "educationItems": [
+      { "title": "Certificación en Desarrollo Frontend", "institution": "Betek", "date": "Noviembre 2024" },
+      { "title": "Certificación en Desarrollo de Software", "institution": "Holberton School", "date": "Julio 2023" },
+      { "title": "Bachiller Académico", "institution": "Instituto Técnico Industrial", "date": "Noviembre 2020" }
+    ],
+    "languages": "Idiomas",
+    "languageItems": [
+      { "language": "Español", "level": "Nativo" },
+      { "language": "Inglés", "level": "Intermedio" }
+    ]
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Tienes un proyecto en mente? Escríbeme.",
+    "nameLabel": "Nombre",
+    "emailLabel": "Correo",
+    "messageLabel": "Mensaje",
+    "submit": "Enviar mensaje",
+    "success": "Mensaje enviado. Te responderé pronto.",
+    "error": "Hubo un error al enviar el mensaje. Intenta de nuevo."
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados."
+  }
+}

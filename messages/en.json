@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Jhonier Santana | Frontend Developer",
+    "description": "Frontend Software Developer specialized in React, React Native and Node.js."
+  },
+  "a11y": {
+    "skipToContent": "Skip to main content"
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "menu": "Open menu"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Jhonier Santana",
+    "role": "Frontend Software Developer",
+    "tagline": "React · React Native · Node.js · TypeScript",
+    "summary": "2+ years of experience designing, developing and maintaining web, mobile and desktop applications, with a focus on UX/UI, scalable frontend architecture and REST API integration.",
+    "cta": "View projects",
+    "cvLabel": "Download CV"
+  },
+  "experience": {
+    "title": "Experience",
+    "current": "Current",
+    "items": [
+      {
+        "role": "Software Developer",
+        "company": "Seguridad Penta / Bartik",
+        "location": "Bogotá, Colombia",
+        "period": "May 2025 - Present",
+        "points": [
+          "Led UX/UI improvements across a suite of 5 web, mobile and desktop applications, optimizing key workflows.",
+          "Designed and implemented the frontend architecture of 4 SaaS applications, integrating REST APIs.",
+          "Directed the migration and update of critical dependencies and ran cross-platform functional testing."
+        ]
+      },
+      {
+        "role": "Frontend Developer",
+        "company": "Attendv / Betek",
+        "location": "Medellín, Colombia",
+        "period": "May 2024 - October 2024",
+        "points": [
+          "Built a complete on-demand services web application with React and Firebase.",
+          "Optimized app performance and SEO, improving load speed and search visibility.",
+          "Set up CI/CD pipelines, automating the team's deployment workflow."
+        ]
+      },
+      {
+        "role": "Software Developer (Freelance)",
+        "company": "Autonomic Mind",
+        "location": "Medellín, Colombia",
+        "period": "September 2023 - October 2023",
+        "points": [
+          "Built solutions across multiple languages (Dart, Kotlin, R, Lua) applying functional programming and recursion.",
+          "Used Git version control in a collaborative environment."
+        ]
+      },
+      {
+        "role": "Software Developer (Trainee)",
+        "company": "Holberton School",
+        "location": "Bogotá, Colombia",
+        "period": "September 2022 - July 2023",
+        "points": [
+          "Built full-stack projects with React, Python (Flask) and MySQL.",
+          "Applied unit and integration testing to ensure code quality and robustness.",
+          "Solved 100+ logic, algorithms and data structures exercises."
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "title": "Technical skills",
+    "groups": [
+      {
+        "label": "Frontend",
+        "items": ["React.js", "React Native", "Electron.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "SASS", "Tailwind CSS", "Chakra UI"]
+      },
+      {
+        "label": "State management",
+        "items": ["Redux", "TanStack Query"]
+      },
+      {
+        "label": "Backend & databases",
+        "items": ["Node.js", "Python", "Flask", "Django", "MySQL", "REST APIs"]
+      },
+      {
+        "label": "Testing & QA",
+        "items": ["Functional testing", "Unit testing", "Bug documentation"]
+      },
+      {
+        "label": "Tools & methodologies",
+        "items": ["Git", "GitHub", "Scrum", "CI/CD"]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Case studies from real projects I've worked on.",
+    "viewCase": "View case study"
+  },
+  "about": {
+    "title": "About me",
+    "body": "Software Developer with 2+ years of experience designing, developing and maintaining web, mobile and desktop applications. Specialized in the JavaScript/TypeScript ecosystem, focused on user experience, REST API integration, scalable frontend architecture and technology migration.",
+    "education": "Education",
+    "educationItems": [
+      { "title": "Frontend Development Certification", "institution": "Betek", "date": "November 2024" },
+      { "title": "Software Development Certification", "institution": "Holberton School", "date": "July 2023" },
+      { "title": "High School Diploma", "institution": "Instituto Técnico Industrial", "date": "November 2020" }
+    ],
+    "languages": "Languages",
+    "languageItems": [
+      { "language": "Spanish", "level": "Native" },
+      { "language": "English", "level": "Intermediate" }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have a project in mind? Get in touch.",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "submit": "Send message",
+    "success": "Message sent. I'll get back to you soon.",
+    "error": "There was an error sending the message. Please try again."
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}
