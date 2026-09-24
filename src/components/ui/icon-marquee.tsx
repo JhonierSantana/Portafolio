@@ -23,7 +23,7 @@ export function IconMarquee({
         }}
       >
         <div
-          className={`flex w-max items-center gap-10 hover:[animation-play-state:paused] ${
+          className={`flex w-max items-center gap-8 hover:[animation-play-state:paused] ${
             direction === "left" ? "animate-marquee-left" : "animate-marquee-right"
           }`}
           style={{ "--marquee-duration": `${duration}s` } as CSSProperties}
@@ -34,10 +34,12 @@ export function IconMarquee({
               <span
                 key={`${name}-${index}`}
                 title={name}
-                className="flex shrink-0 flex-col items-center gap-2"
+                className="group flex shrink-0 flex-col items-center gap-1.5"
               >
-                <Icon className="size-8 text-muted-foreground transition-colors" />
-                <span className="text-[11px] text-muted-foreground">{name}</span>
+                <Icon className="size-9 text-muted-foreground transition-colors group-hover:text-signal" />
+                <span className="whitespace-nowrap text-[11px] leading-tight text-muted-foreground">
+                  {name}
+                </span>
               </span>
             );
           })}

@@ -34,10 +34,10 @@ export async function getProjectContent(locale: string, slug: string) {
   if (!loader) {
     throw new Error(`Project not found: ${locale}/${slug}`);
   }
-  const mod = await loader();
+  const projectModule = await loader();
   return {
-    Content: mod.default,
-    metadata: mod.metadata,
+    Content: projectModule.default,
+    metadata: projectModule.metadata,
   };
 }
 

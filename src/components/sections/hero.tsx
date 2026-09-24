@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
@@ -11,19 +11,19 @@ import { fadeUp, staggerContainer } from "@/lib/motion";
 const STACK = ["React", "React Native", "Node.js", "TypeScript"];
 
 export function Hero() {
-  const t = useTranslations("hero");
+  const heroTexts = useTranslations("hero");
   const locale = useLocale();
 
   return (
     <section className="relative left-1/2 right-1/2 -mx-[50vw] -mt-6 w-screen">
-      <WaveDivider />
+      <WaveDivider animated />
       <motion.div
         initial="hidden"
         animate="visible"
         variants={staggerContainer(0.07, 0.05)}
         className="bg-card px-6 py-16 sm:py-20"
       >
-        <div className="mx-auto flex max-w-5xl flex-col items-center gap-10 text-center md:flex-row md:items-center md:gap-14 md:text-left">
+        <div className="mx-auto flex max-w-5xl flex-col items-center gap-10 text-center md:flex-row md:items-center md:justify-center md:gap-14 md:text-left">
           <motion.div
             variants={{ hidden: { opacity: 0, scale: 0.9 }, visible: { opacity: 1, scale: 1 } }}
             transition={{ duration: 0.6 }}
@@ -37,21 +37,21 @@ export function Hero() {
               transition={{ duration: 0.4 }}
               className="font-data text-sm text-signal"
             >
-              {t("greeting")}
+              {heroTexts("greeting")}
             </motion.p>
             <motion.h1
               variants={fadeUp}
               transition={{ duration: 0.5 }}
               className="font-display text-5xl font-medium leading-[1.05] tracking-tight sm:text-7xl"
             >
-              {t("name")}
+              {heroTexts("name")}
             </motion.h1>
             <motion.p
               variants={fadeUp}
               transition={{ duration: 0.5 }}
               className="text-xl text-muted-foreground sm:text-2xl"
             >
-              {t("role")}
+              {heroTexts("role")}
             </motion.p>
             <motion.div
               variants={fadeUp}
@@ -67,7 +67,7 @@ export function Hero() {
               transition={{ duration: 0.5 }}
               className="max-w-md text-base leading-relaxed text-muted-foreground"
             >
-              {t("summary")}
+              {heroTexts("summary")}
             </motion.p>
             <motion.div
               variants={fadeUp}
@@ -75,14 +75,14 @@ export function Hero() {
               className="flex flex-wrap justify-center gap-3 pt-2 md:justify-start"
             >
               <Button className="rounded-sm" render={<Link href="/proyectos" />}>
-                {t("cta")}
+                {heroTexts("cta")}
               </Button>
               <Button
                 className="rounded-sm"
                 variant="outline"
                 render={<a href={`/cv/jhonier-santana-cv-${locale}.pdf`} download />}
               >
-                {t("cvLabel")}
+                {heroTexts("cvLabel")}
               </Button>
             </motion.div>
             <motion.div
@@ -101,7 +101,7 @@ export function Hero() {
           </div>
         </div>
       </motion.div>
-      <WaveDivider flip />
+      <WaveDivider flip animated />
     </section>
   );
 }

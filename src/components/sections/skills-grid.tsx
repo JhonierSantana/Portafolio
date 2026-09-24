@@ -9,50 +9,65 @@ type SkillGroup = {
   items: string[];
 };
 
+const withIcon = (items: string[]) => items.filter((item) => item in techIcons);
+
+function CardTitle({ children }: { children: string }) {
+  return <h3 className="font-data text-sm text-signal">{children}</h3>;
+}
+
+function IconRow({ items }: { items: string[] }) {
+  return (
+    <ul className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-3">
+      {withIcon(items).map((item) => {
+        const Icon = techIcons[item];
+        return (
+          <li key={item} className="group flex w-16 flex-col items-center gap-1.5 text-center">
+            <Icon
+              aria-hidden
+              className="size-9 text-muted-foreground transition-colors group-hover:text-signal"
+            />
+            <span className="text-[11px] leading-tight text-muted-foreground">{item}</span>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
 export function SkillsGrid() {
-  const t = useTranslations("skills");
-  const groups = t.raw("groups") as SkillGroup[];
+  const skillsTexts = useTranslations("skills");
+  // Order in messages/*.json: frontend, state, backend, testing, tools.
+  const [frontend, state, backend, testing, tools] = skillsTexts.raw("groups") as SkillGroup[];
 
   return (
-    <section className="py-16">
-      <WaveCard bleed>
-        <div className="mx-auto max-w-5xl">
-          <Reveal>
-            <h2 className="font-display text-3xl font-medium tracking-tight">{t("title")}</h2>
-          </Reveal>
-          <RevealGroup className="mt-10 space-y-10">
-            {groups.map((group, index) => {
-              const techItems = group.items.filter((item) => item in techIcons);
-              const staticItems = group.items.filter((item) => !(item in techIcons));
-
-              return (
-                <RevealItem key={group.label} className="border-t border-border pt-5">
-                  <h3 className="font-data text-xs text-muted-foreground">{group.label}</h3>
-
-                  {techItems.length > 0 && (
-                    <div className="mt-4">
-                      <IconMarquee
-                        names={techItems}
-                        direction={index % 2 === 0 ? "left" : "right"}
-                      />
-                    </div>
-                  )}
-
-                  {staticItems.length > 0 && (
-                    <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1.5 text-sm">
-                      {staticItems.map((item) => (
-                        <span key={item} className="font-medium text-signal">
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </RevealItem>
-              );
-            })}
-          </RevealGroup>
-        </div>
-      </WaveCard>
+    <section className="mx-auto max-w-5xl px-6 py-10">
+      <Reveal>
+        <h2 className="font-display text-3xl font-medium tracking-tight text-signal">
+          {skillsTexts("title")}
+        </h2>
+      </Reveal>
+      <RevealGroup className="mt-6 grid gap-4 sm:grid-cols-2">
+        <RevealItem className="sm:col-span-2">
+          <WaveCard className="py-2!">
+            <CardTitle>{skillsTexts("frontBackTitle")}</CardTitle>
+            <div className="mt-3">
+              <IconMarquee names={withIcon([...frontend.items, ...backend.items])} />
+            </div>
+          </WaveCard>
+        </RevealItem>
+        <RevealItem>
+          <WaveCard className="py-2!">
+            <CardTitle>{skillsTexts("stateQaTitle")}</CardTitle>
+            <IconRow items={[...state.items, ...testing.items]} />
+          </WaveCard>
+        </RevealItem>
+        <RevealItem>
+          <WaveCard className="py-2!">
+            <CardTitle>{tools.label}</CardTitle>
+            <IconRow items={tools.items} />
+          </WaveCard>
+        </RevealItem>
+      </RevealGroup>
     </section>
   );
 }

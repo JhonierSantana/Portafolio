@@ -18,12 +18,18 @@ import {
   SiMysql,
   SiGit,
   SiGithub,
+  SiPostman,
+  SiSelenium,
+  SiVitest,
+  SiJira,
+  SiScrumalliance,
+  SiGithubactions,
 } from "react-icons/si";
 
 /**
  * Maps a skill label (as it appears in messages/*.json) to its brand icon.
- * Labels with no entry here are rendered as static text, not as an animated icon —
- * they're processes/methodologies (e.g. "Scrum", "Pruebas funcionales"), not products with a logo.
+ * Labels with no entry here are not rendered in the skills section (icons only).
+ * Processes with no logo are represented by the icon of a representative tool (e.g. Scrum -> Scrum Alliance).
  */
 export const techIcons: Record<string, IconType> = {
   "React.js": SiReact,
@@ -45,4 +51,14 @@ export const techIcons: Record<string, IconType> = {
   MySQL: SiMysql,
   Git: SiGit,
   GitHub: SiGithub,
+  "APIs REST": SiPostman,
+  "REST APIs": SiPostman,
+  "Pruebas funcionales": SiSelenium,
+  "Functional testing": SiSelenium,
+  "Pruebas unitarias": SiVitest,
+  "Unit testing": SiVitest,
+  "Documentación de bugs": SiJira,
+  "Bug documentation": SiJira,
+  Scrum: SiScrumalliance,
+  "CI/CD": SiGithubactions,
 };

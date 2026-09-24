@@ -7,10 +7,12 @@ describe("projects lib", () => {
   });
 
   it("loads metadata for every project in both locales", async () => {
-    const es = await getAllProjectsMeta("es");
-    const en = await getAllProjectsMeta("en");
-    expect(es).toHaveLength(3);
-    expect(en).toHaveLength(3);
-    expect(es.map((p) => p.slug).sort()).toEqual(en.map((p) => p.slug).sort());
+    const spanishProjects = await getAllProjectsMeta("es");
+    const englishProjects = await getAllProjectsMeta("en");
+    expect(spanishProjects).toHaveLength(3);
+    expect(englishProjects).toHaveLength(3);
+    expect(spanishProjects.map((project) => project.slug).sort()).toEqual(
+      englishProjects.map((project) => project.slug).sort(),
+    );
   });
 });

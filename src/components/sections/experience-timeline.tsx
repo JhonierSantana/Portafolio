@@ -12,13 +12,13 @@ type ExperienceItem = {
 };
 
 export function ExperienceTimeline() {
-  const t = useTranslations("experience");
-  const items = t.raw("items") as ExperienceItem[];
+  const experienceTexts = useTranslations("experience");
+  const items = experienceTexts.raw("items") as ExperienceItem[];
 
   return (
     <section className="mx-auto max-w-5xl px-6 py-16">
       <Reveal>
-        <h2 className="font-display text-3xl font-medium tracking-tight">{t("title")}</h2>
+        <h2 className="font-display text-3xl font-medium tracking-tight text-signal">{experienceTexts("title")}</h2>
       </Reveal>
       <div className="mt-10 grid gap-6 sm:grid-cols-2">
         {items.map((item, index) => (
@@ -29,7 +29,7 @@ export function ExperienceTimeline() {
           >
             <WaveCard>
               {index === 0 && (
-                <p className="mb-2 font-data text-xs text-signal">{t("current")}</p>
+                <p className="mb-2 font-data text-xs text-signal">{experienceTexts("current")}</p>
               )}
               <p className="font-data text-xs text-muted-foreground">{item.period}</p>
               <h3 className="mt-1.5 text-lg font-medium">{item.role}</h3>

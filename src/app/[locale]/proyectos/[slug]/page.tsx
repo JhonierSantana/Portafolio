@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { getProjectContent, getProjectSlugs } from "@/lib/projects";
 
@@ -15,7 +14,6 @@ export default async function ProjectCasePage({
   params: Promise<{ locale: string; slug: string }>;
 }) {
   const { locale, slug } = await params;
-  setRequestLocale(locale);
 
   let Content: React.ComponentType;
   let metadata;

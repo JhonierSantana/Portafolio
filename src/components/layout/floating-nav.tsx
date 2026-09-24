@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 
@@ -12,7 +12,7 @@ const ROUTES = [
 ] as const;
 
 export function FloatingNav() {
-  const t = useTranslations("nav");
+  const navTexts = useTranslations("nav");
   const pathname = usePathname();
 
   return (
@@ -39,7 +39,7 @@ export function FloatingNav() {
                 />
               )}
               <span className={`relative ${active ? "text-signal" : ""}`}>
-                {t(route.key)}
+                {navTexts(route.key)}
               </span>
               {active && (
                 <motion.span

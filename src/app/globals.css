@@ -71,9 +71,9 @@
   --border: rgba(255, 255, 255, 0.4);
   --input: rgba(255, 255, 255, 0.45);
   --ring: #d9d9d9;
-  --signal: oklch(0.72 0.13 85);
+  --signal: oklch(0.62 0.16 250);
   --signal-foreground: #0a0a0a;
-  --chart-1: oklch(0.72 0.13 85);
+  --chart-1: oklch(0.62 0.16 250);
   --chart-2: #a3a3a3;
   --chart-3: #737373;
   --chart-4: #525252;
@@ -81,7 +81,7 @@
   --radius: 0.25rem;
   --sidebar: #161616;
   --sidebar-foreground: #f2f2f0;
-  --sidebar-primary: oklch(0.72 0.13 85);
+  --sidebar-primary: oklch(0.62 0.16 250);
   --sidebar-primary-foreground: #0a0a0a;
   --sidebar-accent: #1f1f1f;
   --sidebar-accent-foreground: #f2f2f0;
@@ -131,5 +131,43 @@
   .animate-marquee-left,
   .animate-marquee-right {
     animation: none;
+  }
+}
+
+@keyframes wave-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-wave-drift {
+  animation: wave-drift 12s linear infinite;
+}
+
+@keyframes rain-fall {
+  from {
+    transform: translate3d(0, -120px, 0);
+  }
+  to {
+    transform: translate3d(0, calc(100vh + 120px), 0);
+  }
+}
+
+.rain-drop {
+  animation: rain-fall var(--rain-duration, 2.4s) linear infinite;
+  animation-delay: var(--rain-delay, 0s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-wave-drift {
+    animation: none;
+  }
+
+  .rain-drop {
+    animation: none;
+    display: none;
   }
 }

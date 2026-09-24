@@ -3,7 +3,7 @@ import { Link } from "@/i18n/navigation";
 import type { ProjectMeta } from "@/types/project";
 
 export function ProjectCard({ project }: { project: ProjectMeta }) {
-  const t = useTranslations("projects");
+  const projectsTexts = useTranslations("projects");
 
   return (
     <Link
@@ -23,7 +23,7 @@ export function ProjectCard({ project }: { project: ProjectMeta }) {
         ))}
       </div>
       <span className="mt-4 inline-block text-sm font-medium group-hover:text-signal">
-        {t("viewCase")}
+        {projectsTexts("viewCase")}
       </span>
     </Link>
   );

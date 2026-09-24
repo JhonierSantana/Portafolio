@@ -19,9 +19,9 @@ export async function sendContactMessage(
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_EMAIL_TO;
+  const recipientEmail = process.env.CONTACT_EMAIL_TO;
 
-  if (!apiKey || !to) {
+  if (!apiKey || !recipientEmail) {
     console.error("Missing RESEND_API_KEY or CONTACT_EMAIL_TO env vars");
     return { status: "error" };
   }
@@ -30,7 +30,7 @@ export async function sendContactMessage(
     const resend = new Resend(apiKey);
     await resend.emails.send({
       from: "Portafolio <onboarding@resend.dev>",
-      to,
+      to: recipientEmail,
       replyTo: email,
       subject: `Nuevo mensaje de ${name} — Portafolio`,
       text: `De: ${name} <${email}>\n\n${message}`,

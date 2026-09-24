@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 const initialState: ContactFormState = { status: "idle" };
 
 export function ContactForm() {
-  const t = useTranslations("contact");
+  const contactTexts = useTranslations("contact");
   const [state, formAction, isPending] = useActionState(
     sendContactMessage,
     initialState,
@@ -18,7 +18,7 @@ export function ContactForm() {
     <form action={formAction} className="mt-8 flex flex-col gap-5">
       <div className="flex flex-col gap-1.5">
         <label htmlFor="name" className="text-sm font-medium">
-          {t("nameLabel")}
+          {contactTexts("nameLabel")}
         </label>
         <input
           id="name"
@@ -29,7 +29,7 @@ export function ContactForm() {
       </div>
       <div className="flex flex-col gap-1.5">
         <label htmlFor="email" className="text-sm font-medium">
-          {t("emailLabel")}
+          {contactTexts("emailLabel")}
         </label>
         <input
           id="email"
@@ -41,7 +41,7 @@ export function ContactForm() {
       </div>
       <div className="flex flex-col gap-1.5">
         <label htmlFor="message" className="text-sm font-medium">
-          {t("messageLabel")}
+          {contactTexts("messageLabel")}
         </label>
         <textarea
           id="message"
@@ -52,13 +52,13 @@ export function ContactForm() {
         />
       </div>
       <Button type="submit" disabled={isPending} className="self-start rounded-sm">
-        {t("submit")}
+        {contactTexts("submit")}
       </Button>
       {state.status === "success" && (
-        <p className="text-sm text-signal">{t("success")}</p>
+        <p className="text-sm text-signal">{contactTexts("success")}</p>
       )}
       {state.status === "error" && (
-        <p className="text-sm text-destructive">{t("error")}</p>
+        <p className="text-sm text-destructive">{contactTexts("error")}</p>
       )}
     </form>
   );

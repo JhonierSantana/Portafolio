@@ -7,23 +7,23 @@ import { Link } from "@/i18n/navigation";
 import { LocaleSwitcher } from "./locale-switcher";
 
 export function MobileNav() {
-  const t = useTranslations("nav");
-  const [open, setOpen] = useState(false);
+  const navTexts = useTranslations("nav");
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="md:hidden">
       <button
         type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
+        onClick={() => setIsOpen((wasOpen) => !wasOpen)}
+        aria-expanded={isOpen}
         aria-controls="mobile-nav-panel"
-        aria-label={t("menu")}
+        aria-label={navTexts("menu")}
         className="flex min-h-6 min-w-6 items-center justify-center text-foreground"
       >
-        {open ? <X className="size-5" /> : <Menu className="size-5" />}
+        {isOpen ? <X className="size-5" /> : <Menu className="size-5" />}
       </button>
 
-      {open && (
+      {isOpen && (
         <div
           id="mobile-nav-panel"
           className="absolute inset-x-0 top-full border-b border-border bg-background px-6 py-6"
@@ -31,31 +31,31 @@ export function MobileNav() {
           <nav className="flex flex-col gap-4 text-sm text-muted-foreground">
             <Link
               href="/"
-              onClick={() => setOpen(false)}
+              onClick={() => setIsOpen(false)}
               className="hover:text-foreground transition-colors"
             >
-              {t("home")}
+              {navTexts("home")}
             </Link>
             <Link
               href="/sobre-mi"
-              onClick={() => setOpen(false)}
+              onClick={() => setIsOpen(false)}
               className="hover:text-foreground transition-colors"
             >
-              {t("about")}
+              {navTexts("about")}
             </Link>
             <Link
               href="/proyectos"
-              onClick={() => setOpen(false)}
+              onClick={() => setIsOpen(false)}
               className="hover:text-foreground transition-colors"
             >
-              {t("projects")}
+              {navTexts("projects")}
             </Link>
             <Link
               href="/contacto"
-              onClick={() => setOpen(false)}
+              onClick={() => setIsOpen(false)}
               className="hover:text-foreground transition-colors"
             >
-              {t("contact")}
+              {navTexts("contact")}
             </Link>
             <LocaleSwitcher />
           </nav>

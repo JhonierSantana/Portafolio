@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { Fraunces, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { siteUrl } from "@/lib/site";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { RainBackground } from "@/components/layout/rain-background";
+import { HoverRipple } from "@/components/motion/hover-ripple";
 import "../globals.css";
 
 const fraunces = Fraunces({
@@ -37,12 +39,12 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "meta" });
+  const metaTexts = await getTranslations({ locale, namespace: "meta" });
 
   return {
     metadataBase: new URL(siteUrl),
-    title: t("title"),
-    description: t("description"),
+    title: metaTexts("title"),
+    description: metaTexts("description"),
     alternates: {
       canonical: `/${locale}`,
       languages: {
@@ -66,8 +68,7 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  setRequestLocale(locale);
-  const t = await getTranslations({ locale, namespace: "a11y" });
+  const accessibilityTexts = await getTranslations({ locale, namespace: "a11y" });
 
   return (
     <html
@@ -79,14 +80,16 @@ export default async function LocaleLayout({
           href="#main-content"
           className="sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:left-4 focus-visible:top-4 focus-visible:z-[100] focus-visible:border focus-visible:border-signal focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-sm"
         >
-          {t("skipToContent")}
+          {accessibilityTexts("skipToContent")}
         </a>
+        <RainBackground />
         <NextIntlClientProvider>
           <Header />
           <main id="main-content" className="flex-1">
             {children}
           </main>
           <Footer />
+          <HoverRipple />
         </NextIntlClientProvider>
       </body>
     </html>

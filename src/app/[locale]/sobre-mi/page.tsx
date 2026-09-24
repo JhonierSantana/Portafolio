@@ -1,30 +1,23 @@
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
 
 type EducationItem = { title: string; institution: string; date: string };
 type LanguageItem = { language: string; level: string };
 
-export default async function AboutPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
-  setRequestLocale(locale);
-
-  const t = await getTranslations("about");
-  const educationItems = t.raw("educationItems") as EducationItem[];
-  const languageItems = t.raw("languageItems") as LanguageItem[];
+export default async function AboutPage() {
+  const aboutTexts = await getTranslations("about");
+  const educationItems = aboutTexts.raw("educationItems") as EducationItem[];
+  const languageItems = aboutTexts.raw("languageItems") as LanguageItem[];
 
   return (
     <section className="mx-auto max-w-3xl px-6 py-16">
       <Reveal>
-        <h1 className="font-display text-4xl font-medium tracking-tight">{t("title")}</h1>
-        <p className="mt-4 max-w-xl leading-relaxed text-muted-foreground">{t("body")}</p>
+        <h1 className="font-display text-4xl font-medium tracking-tight">{aboutTexts("title")}</h1>
+        <p className="mt-4 max-w-xl leading-relaxed text-muted-foreground">{aboutTexts("body")}</p>
       </Reveal>
 
       <Reveal>
-        <h2 className="mt-14 font-display text-2xl font-medium">{t("education")}</h2>
+        <h2 className="mt-14 font-display text-2xl font-medium">{aboutTexts("education")}</h2>
       </Reveal>
       <RevealGroup as="ul" className="mt-5 divide-y divide-border border-t border-border">
         {educationItems.map((item) => (
@@ -43,7 +36,7 @@ export default async function AboutPage({
       </RevealGroup>
 
       <Reveal>
-        <h2 className="mt-14 font-display text-2xl font-medium">{t("languages")}</h2>
+        <h2 className="mt-14 font-display text-2xl font-medium">{aboutTexts("languages")}</h2>
       </Reveal>
       <RevealGroup as="ul" className="mt-5 divide-y divide-border border-t border-border">
         {languageItems.map((item) => (

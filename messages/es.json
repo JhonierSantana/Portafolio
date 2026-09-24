@@ -11,7 +11,8 @@
     "projects": "Proyectos",
     "about": "Sobre mí",
     "contact": "Contacto",
-    "menu": "Abrir menú"
+    "menu": "Abrir menú",
+    "roleTag": "Desarrollador FullStack"
   },
   "hero": {
     "greeting": "Hola, soy",
@@ -73,6 +74,8 @@
   },
   "skills": {
     "title": "Habilidades técnicas",
+    "frontBackTitle": "Frontend, Backend y bases de datos",
+    "stateQaTitle": "Gestión de estado, Testing y QA",
     "groups": [
       {
         "label": "Frontend",
@@ -127,6 +130,8 @@
     "error": "Hubo un error al enviar el mensaje. Intenta de nuevo."
   },
   "footer": {
+    "cta": "¿Tienes una idea? Hablemos.",
+    "email": "Escríbeme",
     "rights": "Todos los derechos reservados."
   }
 }

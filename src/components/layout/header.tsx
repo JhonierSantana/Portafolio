@@ -1,9 +1,12 @@
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { LocaleSwitcher } from "./locale-switcher";
 import { MobileNav } from "./mobile-nav";
 import { FloatingNav } from "./floating-nav";
 
 export function Header() {
+  const navTexts = useTranslations("nav");
+
   return (
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur">
       <div className="relative mx-auto grid max-w-5xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-6 py-4">
@@ -12,7 +15,7 @@ export function Header() {
             Jhonier Santana
           </span>
           <span className="font-data hidden shrink-0 text-xs text-signal sm:inline">
-            / frontend
+            / {navTexts("roleTag")}
           </span>
         </Link>
 
