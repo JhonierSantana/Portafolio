@@ -106,7 +106,66 @@
   },
   "about": {
     "title": "Sobre mí",
-    "body": "Desarrollador de Software con más de 2 años de experiencia en el diseño, desarrollo y mantenimiento de aplicaciones web, móviles y de escritorio. Especializado en el ecosistema JavaScript y TypeScript, con enfoque en experiencia de usuario, integración de APIs REST, arquitectura frontend escalable y migración tecnológica.",
+    "introFirst": "Soy Desarrollador de Software con más de <strong>2 años de experiencia</strong> en el diseño, arquitectura y construcción de aplicaciones modernas para entornos <strong>web, móviles y de escritorio</strong>. Me especializo en el ecosistema de <strong>JavaScript y TypeScript</strong>, con tecnologías como <strong>React, React Native, Electron.js y Node.js</strong>, para transformar requerimientos de negocio en soluciones funcionales, escalables y de alto rendimiento.",
+    "introSecond": "He participado en todo el ciclo de vida del software: desde la <strong>creación de aplicaciones desde cero</strong>, diseñando su arquitectura frontend e integrando APIs REST, hasta la migración tecnológica, la optimización de experiencia de usuario (UX/UI) y la implementación de pruebas.",
+    "stats": [
+      { "value": "2+", "label": "años de experiencia" },
+      { "value": "4", "label": "apps SaaS creadas desde cero" },
+      { "value": "5", "label": "apps optimizadas en una suite multiplataforma" },
+      { "value": "100+", "label": "desafíos de lógica y estructuras de datos" }
+    ],
+    "impact": {
+      "title": "Experiencia e impacto",
+      "current": "Actual",
+      "items": [
+        {
+          "role": "Desarrollador de Software",
+          "company": "Seguridad Penta / Bartik",
+          "period": "Mayo 2025 – Actualidad",
+          "points": [
+            { "lead": "Diseño y creación desde cero", "text": "Diseñé e implementé la arquitectura frontend de 4 aplicaciones SaaS, integrando APIs REST y construyendo interfaces intuitivas alineadas con los objetivos del negocio." },
+            { "lead": "Optimización multiplataforma", "text": "Lideré mejoras de UX/UI en una suite de 5 aplicaciones (web, móviles y de escritorio), reduciendo fricciones en flujos clave y elevando la usabilidad general." },
+            { "lead": "Calidad y mantenibilidad", "text": "Dirigí la migración de dependencias críticas y ejecuté pruebas funcionales multiplataforma, reduciendo la deuda técnica y garantizando la estabilidad de los productos." }
+          ]
+        },
+        {
+          "role": "Desarrollador Frontend",
+          "company": "Attendv / Betek",
+          "period": "Mayo 2024 – Octubre 2024",
+          "points": [
+            { "lead": "Construcción de producto", "text": "Desarrollé desde cero una aplicación web completa para servicios bajo demanda con React y Firebase, implementando características dinámicas que optimizaron la interacción del usuario." },
+            { "lead": "Rendimiento y DevOps", "text": "Optimicé la velocidad de carga, la estructura semántica y el SEO de la plataforma, y configuré pipelines de CI/CD para automatizar despliegues y agilizar las entregas del equipo." }
+          ]
+        },
+        {
+          "role": "Desarrollador de Software (Freelance)",
+          "company": "Autonomic Mind",
+          "period": "Septiembre 2023 – Octubre 2023",
+          "points": [
+            { "lead": "Resolución de problemas complejos", "text": "Creé soluciones de software en diversos lenguajes (Dart, Kotlin, R, Lua), aplicando programación funcional y recursión para resolver lógicas de negocio específicas." },
+            { "lead": "Trabajo colaborativo", "text": "Gestioné el control de versiones con Git en entornos remotos, asegurando la integración limpia del código." }
+          ]
+        },
+        {
+          "role": "Desarrollador de Software (Trainee)",
+          "company": "Holberton School",
+          "period": "Septiembre 2022 – Julio 2023",
+          "points": [
+            { "lead": "Proyectos full-stack", "text": "Desarrollé aplicaciones de extremo a extremo con React, Python (Flask) y MySQL, reforzando las pruebas unitarias y de integración y resolviendo más de 100 desafíos de lógica y estructuras de datos." }
+          ]
+        }
+      ]
+    },
+    "philosophy": {
+      "title": "Mi filosofía y crecimiento profesional",
+      "first": "En mi experiencia laboral me he dado cuenta de que en esta industria <strong>cada día hay algo nuevo por aprender</strong>. A veces el avance parece lento o se percibe cierto estancamiento; sin embargo, al mirar hacia atrás y evaluar el camino recorrido, resulta increíble todo lo que se ha construido.",
+      "second": "El apoyo de mis compañeros, el intercambio constante de conocimientos y el trabajo colaborativo han sido fundamentales para fortalecer mis habilidades y adoptar mejores prácticas: Clean Code, arquitecturas escalables, testing y entregas continuas.",
+      "third": "Durante todo este proceso he aprendido dos lecciones. Buscar constantemente ir más allá de lo básico es lo que me motiva a seguir aprendiendo y aportando valor real en cada proyecto.",
+      "lessons": [
+        "Siempre se puede hacer mejor.",
+        "Jamás debemos conformarnos con lo que ya sabemos o practicamos."
+      ]
+    },
     "education": "Formación académica",
     "educationItems": [
       { "title": "Certificación en Desarrollo Frontend", "institution": "Betek", "date": "Noviembre 2024" },

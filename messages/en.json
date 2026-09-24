@@ -106,7 +106,66 @@
   },
   "about": {
     "title": "About me",
-    "body": "Software Developer with 2+ years of experience designing, developing and maintaining web, mobile and desktop applications. Specialized in the JavaScript/TypeScript ecosystem, focused on user experience, REST API integration, scalable frontend architecture and technology migration.",
+    "introFirst": "I'm a Software Developer with over <strong>2 years of experience</strong> designing, architecting and building modern applications for <strong>web, mobile and desktop</strong>. I specialize in the <strong>JavaScript and TypeScript</strong> ecosystem, using <strong>React, React Native, Electron.js and Node.js</strong> to turn business requirements into functional, scalable, high-performance solutions.",
+    "introSecond": "I've taken part in the whole software lifecycle: from <strong>building applications from scratch</strong>, designing their frontend architecture and integrating REST APIs, to technology migration, user experience (UX/UI) optimization and testing.",
+    "stats": [
+      { "value": "2+", "label": "years of experience" },
+      { "value": "4", "label": "SaaS apps built from scratch" },
+      { "value": "5", "label": "apps optimized in a cross-platform suite" },
+      { "value": "100+", "label": "logic and data structure challenges" }
+    ],
+    "impact": {
+      "title": "Experience and impact",
+      "current": "Current",
+      "items": [
+        {
+          "role": "Software Developer",
+          "company": "Seguridad Penta / Bartik",
+          "period": "May 2025 – Present",
+          "points": [
+            { "lead": "Design and build from scratch", "text": "Designed and implemented the frontend architecture of 4 SaaS applications, integrating REST APIs and building intuitive interfaces aligned with business goals." },
+            { "lead": "Cross-platform optimization", "text": "Led UX/UI improvements across a suite of 5 applications (web, mobile and desktop), reducing friction in key flows and raising overall usability." },
+            { "lead": "Quality and maintainability", "text": "Led the migration of critical dependencies and ran cross-platform functional testing, reducing technical debt and keeping the products stable." }
+          ]
+        },
+        {
+          "role": "Frontend Developer",
+          "company": "Attendv / Betek",
+          "period": "May 2024 – October 2024",
+          "points": [
+            { "lead": "Product building", "text": "Built a complete on-demand services web application from scratch with React and Firebase, implementing dynamic features that improved user interaction." },
+            { "lead": "Performance and DevOps", "text": "Optimized load speed, semantic structure and SEO, and set up CI/CD pipelines to automate deployments and speed up the team's deliveries." }
+          ]
+        },
+        {
+          "role": "Software Developer (Freelance)",
+          "company": "Autonomic Mind",
+          "period": "September 2023 – October 2023",
+          "points": [
+            { "lead": "Complex problem solving", "text": "Created software solutions in several languages (Dart, Kotlin, R, Lua), applying functional programming and recursion to solve specific business logic." },
+            { "lead": "Collaborative work", "text": "Managed version control with Git in remote environments, ensuring clean code integration." }
+          ]
+        },
+        {
+          "role": "Software Developer (Trainee)",
+          "company": "Holberton School",
+          "period": "September 2022 – July 2023",
+          "points": [
+            { "lead": "Full-stack projects", "text": "Built end-to-end applications with React, Python (Flask) and MySQL, reinforcing unit and integration testing and solving over 100 logic and data structure challenges." }
+          ]
+        }
+      ]
+    },
+    "philosophy": {
+      "title": "My philosophy and professional growth",
+      "first": "Throughout my career I've realized that in this industry <strong>there is something new to learn every day</strong>. Sometimes progress feels slow or a bit stagnant; yet, looking back at the road traveled, it's incredible to see how much has been built.",
+      "second": "The support of my teammates, constant knowledge sharing and collaborative work have been key to strengthening my skills and adopting better practices: Clean Code, scalable architectures, testing and continuous delivery.",
+      "third": "Along the way I've learned two lessons. Constantly pushing beyond the basics is what keeps me learning and adding real value to every project.",
+      "lessons": [
+        "It can always be done better.",
+        "We should never settle for what we already know or practice."
+      ]
+    },
     "education": "Education",
     "educationItems": [
       { "title": "Frontend Development Certification", "institution": "Betek", "date": "November 2024" },
