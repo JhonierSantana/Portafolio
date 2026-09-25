@@ -15,18 +15,22 @@ function CardTitle({ children }: { children: string }) {
   return <h3 className="font-data text-sm text-signal">{children}</h3>;
 }
 
-function IconRow({ items }: { items: string[] }) {
+function IconRow({ items, fiveOnLarge = false }: { items: string[]; fiveOnLarge?: boolean }) {
   return (
-    <ul className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-3">
+    <ul
+      className={`mt-3 grid grid-cols-4 gap-x-2 gap-y-4 ${fiveOnLarge ? "lg:grid-cols-5" : ""}`}
+    >
       {withIcon(items).map((item) => {
         const Icon = techIcons[item];
         return (
-          <li key={item} className="group flex w-16 flex-col items-center gap-1.5 text-center">
+          <li key={item} className="group flex min-w-0 flex-col items-center gap-1.5 text-center">
             <Icon
               aria-hidden
               className="size-9 text-muted-foreground transition-colors group-hover:text-signal"
             />
-            <span className="text-[11px] leading-tight text-muted-foreground">{item}</span>
+            <span className="w-full hyphens-auto wrap-break text-[10px] leading-tight text-muted-foreground sm:text-[11px]">
+              {item}
+            </span>
           </li>
         );
       })}
@@ -46,8 +50,8 @@ export function SkillsGrid() {
           {skillsTexts("title")}
         </h2>
       </Reveal>
-      <RevealGroup className="mt-6 grid gap-4 sm:grid-cols-2">
-        <RevealItem className="sm:col-span-2">
+      <RevealGroup className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <RevealItem className="min-w-0 sm:col-span-2">
           <WaveCard className="py-2!">
             <CardTitle>{skillsTexts("frontBackTitle")}</CardTitle>
             <div className="mt-3">
@@ -55,13 +59,13 @@ export function SkillsGrid() {
             </div>
           </WaveCard>
         </RevealItem>
-        <RevealItem>
+        <RevealItem className="min-w-0">
           <WaveCard className="py-2!">
             <CardTitle>{skillsTexts("stateQaTitle")}</CardTitle>
-            <IconRow items={[...state.items, ...testing.items]} />
+            <IconRow items={[...state.items, ...testing.items]} fiveOnLarge />
           </WaveCard>
         </RevealItem>
-        <RevealItem>
+        <RevealItem className="min-w-0">
           <WaveCard className="py-2!">
             <CardTitle>{tools.label}</CardTitle>
             <IconRow items={tools.items} />

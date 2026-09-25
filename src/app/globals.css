@@ -147,6 +147,19 @@
   animation: wave-drift 12s linear infinite;
 }
 
+@keyframes wave-drift-vertical {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+.animate-wave-drift-vertical {
+  animation: wave-drift-vertical 12s linear infinite;
+}
+
 @keyframes rain-fall {
   from {
     transform: translate3d(0, -120px, 0);
@@ -162,7 +175,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-wave-drift {
+  .animate-wave-drift,
+  .animate-wave-drift-vertical {
     animation: none;
   }
 
