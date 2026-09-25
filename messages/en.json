@@ -1,0 +1,210 @@
+{
+  "meta": {
+    "title": "Jhonier Santana | Frontend Developer",
+    "description": "Frontend Software Developer specialized in React, React Native and Node.js."
+  },
+  "a11y": {
+    "skipToContent": "Skip to main content"
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "menu": "Open menu",
+    "roleTag": "FullStack Developer"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Jhonier Santana",
+    "role": "Frontend Software Developer",
+    "tagline": "React · React Native · Node.js · TypeScript",
+    "summary": "2+ years of experience designing, developing and maintaining web, mobile and desktop applications, with a focus on UX/UI, scalable frontend architecture and REST API integration.",
+    "cta": "View projects",
+    "cvLabel": "Download CV"
+  },
+  "experience": {
+    "title": "Experience",
+    "current": "Current",
+    "items": [
+      {
+        "role": "Software Developer",
+        "company": "Seguridad Penta / Bartik",
+        "location": "Bogotá, Colombia",
+        "period": "May 2025 - Present",
+        "points": [
+          "Led UX/UI improvements across a suite of 5 web, mobile and desktop applications, optimizing key workflows.",
+          "Designed and implemented the frontend architecture of 4 SaaS applications, integrating REST APIs.",
+          "Directed the migration and update of critical dependencies and ran cross-platform functional testing."
+        ]
+      },
+      {
+        "role": "Frontend Developer",
+        "company": "Attendv / Betek",
+        "location": "Medellín, Colombia",
+        "period": "May 2024 - October 2024",
+        "points": [
+          "Built a complete on-demand services web application with React and Firebase.",
+          "Optimized app performance and SEO, improving load speed and search visibility.",
+          "Set up CI/CD pipelines, automating the team's deployment workflow."
+        ]
+      },
+      {
+        "role": "Software Developer (Freelance)",
+        "company": "Autonomic Mind",
+        "location": "Medellín, Colombia",
+        "period": "September 2023 - October 2023",
+        "points": [
+          "Built solutions across multiple languages (Dart, Kotlin, R, Lua) applying functional programming and recursion.",
+          "Used Git version control in a collaborative environment."
+        ]
+      },
+      {
+        "role": "Software Developer (Trainee)",
+        "company": "Holberton School",
+        "location": "Bogotá, Colombia",
+        "period": "September 2022 - July 2023",
+        "points": [
+          "Built full-stack projects with React, Python (Flask) and MySQL.",
+          "Applied unit and integration testing to ensure code quality and robustness.",
+          "Solved 100+ logic, algorithms and data structures exercises."
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "title": "Technical skills",
+    "frontBackTitle": "Frontend, Backend and databases",
+    "stateQaTitle": "State management, Testing and QA",
+    "groups": [
+      {
+        "label": "Frontend",
+        "items": ["React.js", "React Native", "Electron.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "SASS", "Tailwind CSS", "Chakra UI"]
+      },
+      {
+        "label": "State management",
+        "items": ["Redux", "TanStack Query"]
+      },
+      {
+        "label": "Backend & databases",
+        "items": ["Node.js", "Python", "Flask", "Django", "MySQL", "REST APIs"]
+      },
+      {
+        "label": "Testing & QA",
+        "items": ["Functional testing", "Unit testing", "Bug documentation"]
+      },
+      {
+        "label": "Tools & methodologies",
+        "items": ["Git", "GitHub", "Scrum", "CI/CD"]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Case studies from real projects I've worked on.",
+    "viewCase": "View case study",
+    "inProgress": {
+      "badge": "In progress",
+      "title": "I'm preparing my case studies",
+      "body": "This section is under construction. I'm documenting real projects with their context, the problem, the solution and the result. You'll see them here very soon.",
+      "aboutCta": "See my experience",
+      "contactCta": "Let's talk"
+    }
+  },
+  "about": {
+    "title": "About me",
+    "introFirst": "I'm a Software Developer with over <strong>2 years of experience</strong> designing, architecting and building modern applications for <strong>web, mobile and desktop</strong>. I specialize in the <strong>JavaScript and TypeScript</strong> ecosystem, using <strong>React, React Native, Electron.js and Node.js</strong> to turn business requirements into functional, scalable, high-performance solutions.",
+    "introSecond": "I've taken part in the whole software lifecycle: from <strong>building applications from scratch</strong>, designing their frontend architecture and integrating REST APIs, to technology migration, user experience (UX/UI) optimization and testing.",
+    "stats": [
+      { "value": "2+", "label": "years of experience" },
+      { "value": "4", "label": "SaaS apps built from scratch" },
+      { "value": "5", "label": "apps optimized in a cross-platform suite" },
+      { "value": "100+", "label": "logic and data structure challenges" }
+    ],
+    "impact": {
+      "title": "Experience and impact",
+      "current": "Current",
+      "items": [
+        {
+          "role": "Software Developer",
+          "company": "Seguridad Penta / Bartik",
+          "period": "May 2025 – Present",
+          "points": [
+            { "lead": "Design and build from scratch", "text": "Designed and implemented the frontend architecture of 4 SaaS applications, integrating REST APIs and building intuitive interfaces aligned with business goals." },
+            { "lead": "Cross-platform optimization", "text": "Led UX/UI improvements across a suite of 5 applications (web, mobile and desktop), reducing friction in key flows and raising overall usability." },
+            { "lead": "Quality and maintainability", "text": "Led the migration of critical dependencies and ran cross-platform functional testing, reducing technical debt and keeping the products stable." }
+          ]
+        },
+        {
+          "role": "Frontend Developer",
+          "company": "Attendv / Betek",
+          "period": "May 2024 – October 2024",
+          "points": [
+            { "lead": "Product building", "text": "Built a complete on-demand services web application from scratch with React and Firebase, implementing dynamic features that improved user interaction." },
+            { "lead": "Performance and DevOps", "text": "Optimized load speed, semantic structure and SEO, and set up CI/CD pipelines to automate deployments and speed up the team's deliveries." }
+          ]
+        },
+        {
+          "role": "Software Developer (Freelance)",
+          "company": "Autonomic Mind",
+          "period": "September 2023 – October 2023",
+          "points": [
+            { "lead": "Complex problem solving", "text": "Created software solutions in several languages (Dart, Kotlin, R, Lua), applying functional programming and recursion to solve specific business logic." },
+            { "lead": "Collaborative work", "text": "Managed version control with Git in remote environments, ensuring clean code integration." }
+          ]
+        },
+        {
+          "role": "Software Developer (Trainee)",
+          "company": "Holberton School",
+          "period": "September 2022 – July 2023",
+          "points": [
+            { "lead": "Full-stack projects", "text": "Built end-to-end applications with React, Python (Flask) and MySQL, reinforcing unit and integration testing and solving over 100 logic and data structure challenges." }
+          ]
+        }
+      ]
+    },
+    "philosophy": {
+      "title": "My philosophy and professional growth",
+      "first": "Throughout my career I've realized that in this industry <strong>there is something new to learn every day</strong>. Sometimes progress feels slow or a bit stagnant; yet, looking back at the road traveled, it's incredible to see how much has been built.",
+      "second": "The support of my teammates, constant knowledge sharing and collaborative work have been key to strengthening my skills and adopting better practices: Clean Code, scalable architectures, testing and continuous delivery.",
+      "third": "Along the way I've learned two lessons. Constantly pushing beyond the basics is what keeps me learning and adding real value to every project.",
+      "lessons": [
+        "It can always be done better.",
+        "We should never settle for what we already know or practice."
+      ]
+    },
+    "education": "Education",
+    "educationItems": [
+      { "title": "Frontend Development Certification", "institution": "Betek", "date": "November 2024" },
+      { "title": "Software Development Certification", "institution": "Holberton School", "date": "July 2023" },
+      { "title": "High School Diploma", "institution": "Instituto Técnico Industrial", "date": "November 2020" }
+    ],
+    "languages": "Languages",
+    "languageItems": [
+      { "language": "Spanish", "level": "Native" },
+      { "language": "English", "level": "Intermediate" }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have a project in mind? Get in touch.",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "submit": "Send message",
+    "success": "Message sent. I'll get back to you soon.",
+    "error": "There was an error sending the message. Please try again.",
+    "infoTitle": "Let's talk",
+    "infoBody": "Tell me about your idea, a project or an opportunity. I'll get back to you as soon as I can.",
+    "formTitle": "Send me a message",
+    "sending": "Sending...",
+    "phoneLabel": "Phone",
+    "locationLabel": "Location",
+    "socialLabel": "Social"
+  },
+  "footer": {
+    "cta": "Have an idea? Let's talk.",
+    "email": "Email me",
+    "rights": "All rights reserved."
+  }
+}
