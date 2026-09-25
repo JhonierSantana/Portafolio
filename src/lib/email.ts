@@ -28,13 +28,18 @@ export async function sendContactMessage(
 
   try {
     const resend = new Resend(apiKey);
-    await resend.emails.send({
+    // Resend does not throw when it rejects an email: it resolves with `{ data, error }`.
+    const { error } = await resend.emails.send({
       from: "Portafolio <onboarding@resend.dev>",
       to: recipientEmail,
       replyTo: email,
       subject: `Nuevo mensaje de ${name} — Portafolio`,
       text: `De: ${name} <${email}>\n\n${message}`,
     });
+    if (error) {
+      console.error("Resend rejected the contact message", error);
+      return { status: "error" };
+    }
     return { status: "success" };
   } catch (error) {
     console.error("Failed to send contact message", error);

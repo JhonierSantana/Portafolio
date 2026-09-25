@@ -102,7 +102,14 @@
   "projects": {
     "title": "Projects",
     "subtitle": "Case studies from real projects I've worked on.",
-    "viewCase": "View case study"
+    "viewCase": "View case study",
+    "inProgress": {
+      "badge": "In progress",
+      "title": "I'm preparing my case studies",
+      "body": "This section is under construction. I'm documenting real projects with their context, the problem, the solution and the result. You'll see them here very soon.",
+      "aboutCta": "See my experience",
+      "contactCta": "Let's talk"
+    }
   },
   "about": {
     "title": "About me",
@@ -186,7 +193,14 @@
     "messageLabel": "Message",
     "submit": "Send message",
     "success": "Message sent. I'll get back to you soon.",
-    "error": "There was an error sending the message. Please try again."
+    "error": "There was an error sending the message. Please try again.",
+    "infoTitle": "Let's talk",
+    "infoBody": "Tell me about your idea, a project or an opportunity. I'll get back to you as soon as I can.",
+    "formTitle": "Send me a message",
+    "sending": "Sending...",
+    "phoneLabel": "Phone",
+    "locationLabel": "Location",
+    "socialLabel": "Social"
   },
   "footer": {
     "cta": "Have an idea? Let's talk.",

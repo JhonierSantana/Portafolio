@@ -12,8 +12,7 @@ test("navigates through main sections in Spanish", async ({ page }) => {
   await page.locator("header").getByRole("link", { name: "Proyectos", exact: true }).click();
   await expect(page).toHaveURL(/\/es\/proyectos$/);
 
-  await page.getByRole("link", { name: "Ver caso de estudio" }).first().click();
-  await expect(page.locator("article h1")).toBeVisible();
+  await expect(page.getByRole("status")).toContainText("En proceso");
 });
 
 test("switches locale to English", async ({ page }) => {

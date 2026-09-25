@@ -102,7 +102,14 @@
   "projects": {
     "title": "Proyectos",
     "subtitle": "Casos de estudio de proyectos reales en los que he trabajado.",
-    "viewCase": "Ver caso de estudio"
+    "viewCase": "Ver caso de estudio",
+    "inProgress": {
+      "badge": "En proceso",
+      "title": "Estoy preparando mis casos de estudio",
+      "body": "Esta sección está en construcción. Estoy documentando proyectos reales con su contexto, el problema, la solución y el resultado. Muy pronto los verás aquí.",
+      "aboutCta": "Ver mi experiencia",
+      "contactCta": "Hablemos"
+    }
   },
   "about": {
     "title": "Sobre mí",
@@ -186,7 +193,14 @@
     "messageLabel": "Mensaje",
     "submit": "Enviar mensaje",
     "success": "Mensaje enviado. Te responderé pronto.",
-    "error": "Hubo un error al enviar el mensaje. Intenta de nuevo."
+    "error": "Hubo un error al enviar el mensaje. Intenta de nuevo.",
+    "infoTitle": "Hablemos",
+    "infoBody": "Cuéntame sobre tu idea, un proyecto o una oportunidad. Te responderé lo antes posible.",
+    "formTitle": "Envíame un mensaje",
+    "sending": "Enviando...",
+    "phoneLabel": "Teléfono",
+    "locationLabel": "Ubicación",
+    "socialLabel": "Redes"
   },
   "footer": {
     "cta": "¿Tienes una idea? Hablemos.",

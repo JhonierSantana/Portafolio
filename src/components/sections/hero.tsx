@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { AvatarRing } from "@/components/sections/avatar-ring";
 import { WaveDivider } from "@/components/ui/wave-divider";
 import { fadeUp, staggerContainer } from "@/lib/motion";
+import { contactInfo } from "@/lib/contact-info";
 
 const STACK = ["React", "React Native", "Node.js", "TypeScript"];
 
@@ -74,12 +75,13 @@ export function Hero() {
               transition={{ duration: 0.5 }}
               className="flex flex-wrap justify-center gap-3 pt-2 md:justify-start"
             >
-              <Button className="rounded-sm" render={<Link href="/proyectos" />}>
+              <Button className="rounded-sm" nativeButton={false} render={<Link href="/proyectos" />}>
                 {heroTexts("cta")}
               </Button>
               <Button
                 className="rounded-sm"
                 variant="outline"
+                nativeButton={false}
                 render={<a href={`/cv/jhonier-santana-cv-${locale}.pdf`} download />}
               >
                 {heroTexts("cvLabel")}
@@ -90,13 +92,13 @@ export function Hero() {
               transition={{ duration: 0.5 }}
               className="flex flex-wrap justify-center gap-x-5 gap-y-1 pt-1 font-data text-xs text-muted-foreground md:justify-start"
             >
-              <a href="mailto:jhonier_2504@hotmail.com" className="hover:text-signal transition-colors">
-                jhonier_2504@hotmail.com
+              <a href={`mailto:${contactInfo.email}`} className="hover:text-signal transition-colors">
+                {contactInfo.email}
               </a>
-              <a href="tel:+573215477347" className="hover:text-signal transition-colors">
-                +57 321 547 7347
+              <a href={contactInfo.phoneHref} className="hover:text-signal transition-colors">
+                {contactInfo.phone}
               </a>
-              <span>Socorro, Santander, CO</span>
+              <span>{contactInfo.location}</span>
             </motion.div>
           </div>
         </div>

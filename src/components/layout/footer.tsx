@@ -2,15 +2,14 @@ import { useTranslations } from "next-intl";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa6";
 import { Link } from "@/i18n/navigation";
 import { WaveDivider } from "@/components/ui/wave-divider";
-
-const EMAIL = "jhonier_2504@hotmail.com";
+import { contactInfo } from "@/lib/contact-info";
 
 const socials = [
-  { label: "Email", href: `mailto:${EMAIL}`, Icon: FaEnvelope, external: false },
-  { label: "GitHub", href: "https://github.com/JhonierSantana", Icon: FaGithub, external: true },
+  { label: "Email", href: `mailto:${contactInfo.email}`, Icon: FaEnvelope, external: false },
+  { label: "GitHub", href: contactInfo.githubUrl, Icon: FaGithub, external: true },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/jhonier-yesid-santana-pedroza-457492265",
+    href: contactInfo.linkedinUrl,
     Icon: FaLinkedin,
     external: true,
   },
@@ -39,7 +38,7 @@ export function Footer() {
                 {footerTexts("cta")}
               </p>
               <a
-                href={`mailto:${EMAIL}`}
+                href={`mailto:${contactInfo.email}`}
                 className="mt-5 inline-flex items-center gap-2 rounded-full bg-signal px-5 py-2.5 text-sm font-medium text-signal-foreground transition-transform hover:-translate-y-0.5"
               >
                 <FaEnvelope aria-hidden className="size-4" />
