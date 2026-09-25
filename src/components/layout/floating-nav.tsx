@@ -3,13 +3,7 @@
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-
-const ROUTES = [
-  { href: "/", key: "home" },
-  { href: "/sobre-mi", key: "about" },
-  { href: "/proyectos", key: "projects" },
-  { href: "/contacto", key: "contact" },
-] as const;
+import { navRoutes } from "@/lib/nav-routes";
 
 export function FloatingNav() {
   const navTexts = useTranslations("nav");
@@ -17,7 +11,7 @@ export function FloatingNav() {
 
   return (
     <nav className="hidden items-center gap-1 md:flex">
-      {ROUTES.map((route) => {
+      {navRoutes.map((route) => {
         const active = pathname === route.href;
         return (
           <motion.div

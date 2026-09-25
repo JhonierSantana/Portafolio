@@ -21,7 +21,7 @@ export function Header() {
 
         <FloatingNav />
 
-        <div className="flex items-center justify-self-end">
+        <div className="col-start-3 flex items-center justify-self-end">
           <div className="hidden md:block">
             <LocaleSwitcher />
           </div>

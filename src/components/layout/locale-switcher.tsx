@@ -4,13 +4,14 @@ import { useLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { usePathname, useRouter } from "@/i18n/navigation";
 
-export function LocaleSwitcher() {
+export function LocaleSwitcher({ onChange }: { onChange?: () => void }) {
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
 
   function handleChange(nextLocale: string) {
     router.replace(pathname, { locale: nextLocale });
+    onChange?.();
   }
 
   return (

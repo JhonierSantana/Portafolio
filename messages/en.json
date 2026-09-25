@@ -12,7 +12,9 @@
     "about": "About",
     "contact": "Contact",
     "menu": "Open menu",
-    "roleTag": "FullStack Developer"
+    "roleTag": "FullStack Developer",
+    "menuTitle": "Navigation menu",
+    "close": "Close menu"
   },
   "hero": {
     "greeting": "Hi, I'm",
