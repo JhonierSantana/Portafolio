@@ -5,9 +5,10 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { Avatar3D } from "@/components/sections/avatar-3d";
+import { StatusBadge } from "@/components/ui/status-badge";
 import { WaveDivider } from "@/components/ui/wave-divider";
 import { fadeUp, staggerContainer } from "@/lib/motion";
-import { contactInfo } from "@/lib/contact-info";
+import { cvHref } from "@/lib/contact-info";
 
 const STACK = ["React", "React Native", "Node.js", "TypeScript"];
 
@@ -33,6 +34,9 @@ export function Hero() {
           </motion.div>
 
           <div className="flex flex-col items-center gap-4 md:items-start">
+            <motion.div variants={fadeUp} transition={{ duration: 0.4 }}>
+              <StatusBadge>{heroTexts("availability")}</StatusBadge>
+            </motion.div>
             <motion.p
               variants={fadeUp}
               transition={{ duration: 0.4 }}
@@ -82,23 +86,10 @@ export function Hero() {
                 className="rounded-sm"
                 variant="outline"
                 nativeButton={false}
-                render={<a href={`/cv/jhonier-santana-cv-${locale}.pdf`} download />}
+                render={<a href={cvHref(locale)} download />}
               >
                 {heroTexts("cvLabel")}
               </Button>
-            </motion.div>
-            <motion.div
-              variants={fadeUp}
-              transition={{ duration: 0.5 }}
-              className="flex flex-wrap justify-center gap-x-5 gap-y-1 pt-1 font-data text-xs text-muted-foreground md:justify-start"
-            >
-              <a href={`mailto:${contactInfo.email}`} className="hover:text-signal transition-colors">
-                {contactInfo.email}
-              </a>
-              <a href={contactInfo.phoneHref} className="hover:text-signal transition-colors">
-                {contactInfo.phone}
-              </a>
-              <span>{contactInfo.location}</span>
             </motion.div>
           </div>
         </div>

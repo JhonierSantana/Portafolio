@@ -1,22 +1,18 @@
 "use client";
 
-import { useLocale } from "next-intl";
-import { routing } from "@/i18n/routing";
-import { usePathname, useRouter } from "@/i18n/navigation";
+import { useSwitchLocale } from "@/hooks/use-switch-locale";
 
 export function LocaleSwitcher({ onChange }: { onChange?: () => void }) {
-  const locale = useLocale();
-  const pathname = usePathname();
-  const router = useRouter();
+  const { locale, locales, switchLocale } = useSwitchLocale();
 
-  function handleChange(nextLocale: string) {
-    router.replace(pathname, { locale: nextLocale });
+  function handleChange(nextLocale: (typeof locales)[number]) {
+    switchLocale(nextLocale);
     onChange?.();
   }
 
   return (
     <div className="flex items-center gap-2 text-sm">
-      {routing.locales.map((loc) => (
+      {locales.map((loc) => (
         <button
           key={loc}
           type="button"

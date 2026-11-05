@@ -21,3 +21,6 @@ export function staggerContainer(stagger = 0.08, delayChildren = 0): Variants {
     visible: { transition: { staggerChildren: stagger, delayChildren } },
   };
 }
+
+/** Length of the page-to-page transition; heavy work (e.g. the 3D avatar) waits this long to keep it smooth. */
+export const PAGE_TRANSITION_SECONDS = 0.7;

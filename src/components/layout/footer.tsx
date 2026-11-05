@@ -3,6 +3,8 @@ import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa6";
 import { Link } from "@/i18n/navigation";
 import { WaveDivider } from "@/components/ui/wave-divider";
 import { contactInfo } from "@/lib/contact-info";
+import { navRoutes } from "@/lib/nav-routes";
+import { WeatherBadge } from "@/components/ambience/weather-badge";
 
 const socials = [
   { label: "Email", href: `mailto:${contactInfo.email}`, Icon: FaEnvelope, external: false },
@@ -14,13 +16,6 @@ const socials = [
     external: true,
   },
 ];
-
-const links = [
-  { href: "/", key: "home" },
-  { href: "/sobre-mi", key: "about" },
-  { href: "/proyectos", key: "projects" },
-  { href: "/contacto", key: "contact" },
-] as const;
 
 export function Footer() {
   const footerTexts = useTranslations("footer");
@@ -47,7 +42,7 @@ export function Footer() {
             </div>
             <nav aria-label="Footer" className="sm:justify-self-end">
               <ul className="space-y-1">
-                {links.map(({ href, key }) => (
+                {navRoutes.map(({ href, key }) => (
                   <li key={key}>
                     <Link
                       href={href}
@@ -62,9 +57,12 @@ export function Footer() {
           </div>
 
           <div className="mt-10 flex flex-col-reverse items-center justify-between gap-4 border-t border-border pt-6 sm:flex-row">
-            <p className="text-sm text-muted-foreground">
-              © {year} Jhonier Santana. {footerTexts("rights")}
-            </p>
+            <div className="flex flex-col items-center gap-1 sm:items-start">
+              <p className="text-sm text-muted-foreground">
+                © {year} Jhonier Santana. {footerTexts("rights")}
+              </p>
+              <WeatherBadge />
+            </div>
             <ul className="flex gap-3">
               {socials.map(({ label, href, Icon, external }) => (
                 <li key={label}>

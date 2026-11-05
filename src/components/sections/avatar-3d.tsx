@@ -3,6 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import { AvatarRing } from "@/components/sections/avatar-ring";
 import type { AvatarScene } from "@/lib/avatar/avatar-scene";
+import { useStore } from "@/hooks/use-store";
+import { ambienceStore, selectRainLevel } from "@/lib/ambience-store";
+import { introStore } from "@/lib/intro-store";
+import { PAGE_TRANSITION_SECONDS } from "@/lib/motion";
 
 /**
  * Set to "/models/avatar.glb" once a Meshy/Tripo export is placed in public/models/;
@@ -23,6 +27,8 @@ export function Avatar3D({ label, className = "" }: { label: string; className?:
   const containerRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<AvatarScene | null>(null);
   const [status, setStatus] = useState<"loading" | "ready" | "fallback">("loading");
+  const rainLevel = selectRainLevel(useStore(ambienceStore));
+  const wantsUmbrella = rainLevel === "heavy" || rainLevel === "storm";
 
   useEffect(() => {
     const container = containerRef.current;
@@ -30,8 +36,13 @@ export function Avatar3D({ label, className = "" }: { label: string; className?:
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let cancelled = false;
     let waveTimer = 0;
+    let startTimer = 0;
     // three.js is only downloaded on the client, in its own chunk; without WebGL the photo avatar stays.
-    Promise.resolve()
+    // Creating the scene blocks the main thread, so it waits until the page transition has finished.
+    const start = new Promise<void>((resolve) => {
+      startTimer = window.setTimeout(resolve, PAGE_TRANSITION_SECONDS * 1000 + 100);
+    });
+    start
       .then(() => {
         if (!supportsWebGL()) throw new Error("WebGL unavailable");
         return import("@/lib/avatar/avatar-scene");
@@ -44,19 +55,28 @@ export function Avatar3D({ label, className = "" }: { label: string; className?:
         }
         sceneRef.current = scene;
         setStatus("ready");
+        introStore.markAvatarReady();
         if (!reduceMotion) waveTimer = window.setTimeout(() => scene.wave(), 1200);
       })
       .catch(() => {
-        if (!cancelled) setStatus("fallback");
+        if (cancelled) return;
+        setStatus("fallback");
+        introStore.markAvatarReady();
       });
 
     return () => {
       cancelled = true;
+      window.clearTimeout(startTimer);
       window.clearTimeout(waveTimer);
       sceneRef.current?.dispose();
       sceneRef.current = null;
     };
   }, []);
+
+  // When it rains hard in Socorro (or during the storm easter egg) the avatar opens its umbrella.
+  useEffect(() => {
+    if (status === "ready") sceneRef.current?.setUmbrella(wantsUmbrella);
+  }, [status, wantsUmbrella]);
 
   if (status === "fallback") return <AvatarRing size="size-36 sm:size-44" imgSize={176} />;
 

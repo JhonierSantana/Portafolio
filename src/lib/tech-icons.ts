@@ -24,6 +24,7 @@ import {
   SiJira,
   SiScrumalliance,
   SiGithubactions,
+  SiClaudecode,
 } from "react-icons/si";
 
 /**
@@ -61,4 +62,5 @@ export const techIcons: Record<string, IconType> = {
   "Bug documentation": SiJira,
   Scrum: SiScrumalliance,
   "CI/CD": SiGithubactions,
+  "Claude Code": SiClaudecode,
 };

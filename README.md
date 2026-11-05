@@ -1,6 +1,6 @@
 # Portafolio — Jhonier Santana
 
-Portafolio profesional de desarrollador frontend, construido con Next.js (App Router), TypeScript, Tailwind CSS y next-intl (bilingüe ES/EN).
+Portafolio profesional de desarrollador fullstack, construido con Next.js (App Router), TypeScript, Tailwind CSS y next-intl (bilingüe ES/EN).
 
 ## Stack
 

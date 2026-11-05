@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { FaScrewdriverWrench } from "react-icons/fa6";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
+import { StatusBadge } from "@/components/ui/status-badge";
 import { WaveCard } from "@/components/ui/wave-card";
 import { Reveal } from "@/components/motion/reveal";
 
@@ -31,10 +32,7 @@ export default async function ProjectsPage() {
             <span className="flex size-14 items-center justify-center rounded-full border border-signal text-signal">
               <FaScrewdriverWrench aria-hidden className="size-6" />
             </span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 font-data text-xs text-signal">
-              <span aria-hidden className="size-2 animate-pulse rounded-full bg-signal" />
-              {projectsTexts("inProgress.badge")}
-            </span>
+            <StatusBadge>{projectsTexts("inProgress.badge")}</StatusBadge>
             <h2 className="font-display text-2xl font-medium tracking-tight sm:text-3xl">
               {projectsTexts("inProgress.title")}
             </h2>

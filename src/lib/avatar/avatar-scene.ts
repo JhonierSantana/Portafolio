@@ -5,6 +5,8 @@ import { buildCharacter } from "@/lib/avatar/build-character";
 
 export type AvatarScene = {
   wave: () => void;
+  /** Opens (true) or closes the umbrella; the transition is animated. */
+  setUmbrella: (open: boolean) => void;
   dispose: () => void;
 };
 
@@ -18,6 +20,8 @@ type Framing = { focus: THREE.Vector3; halfHeight: number; halfWidth: number };
 
 type Rig = {
   framing: Framing;
+  /** Framing to blend toward while the umbrella is open (procedural character only). */
+  umbrellaFraming?: Framing;
   update: (state: FrameState) => void;
   wave?: (time: number) => void;
 };
@@ -30,10 +34,12 @@ type FrameState = {
   wave: number;
   waveTime: number;
   blink: number;
+  umbrella: number;
   motion: number;
 };
 
 const WAVE_SECONDS = 2.8;
+const UMBRELLA_SECONDS = 0.9;
 const FOV = 30;
 
 async function loadModelRig(url: string, scene: THREE.Scene): Promise<Rig | null> {
@@ -115,7 +121,7 @@ export async function createAvatarScene(container: HTMLElement, { modelUrl, redu
   scene.add(new THREE.AmbientLight("#ffffff", 0.12 * Math.PI));
   const key = new THREE.DirectionalLight("#fff2e4", 1.25 * Math.PI);
   key.castShadow = true;
-  key.shadow.mapSize.set(2048, 2048);
+  key.shadow.mapSize.set(1024, 1024);
   key.shadow.bias = -0.0004;
   key.shadow.normalBias = 0.015;
   key.shadow.radius = 7;
@@ -130,10 +136,15 @@ export async function createAvatarScene(container: HTMLElement, { modelUrl, redu
     scene.add(character.root);
     rig = {
       framing: { focus: character.focus, ...character.frame },
+      umbrellaFraming: character.umbrellaFraming,
       update: (state) => character.update(state),
     };
   }
   const { focus, halfHeight, halfWidth } = rig.framing;
+  const umbrellaFraming = rig.umbrellaFraming ?? rig.framing;
+  const viewFocus = new THREE.Vector3();
+  let umbrella = 0;
+  let umbrellaTarget = 0;
 
   // Lights and shadow camera follow the framing so any model size works.
   const span = Math.max(halfHeight, halfWidth);
@@ -152,14 +163,21 @@ export async function createAvatarScene(container: HTMLElement, { modelUrl, redu
     renderer.setSize(width, height, false);
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
+    // Blend toward the umbrella framing as it opens, so the canopy is never cut off.
+    const blend = umbrella * umbrella * (3 - 2 * umbrella);
+    viewFocus.lerpVectors(focus, umbrellaFraming.focus, blend);
+    const viewHalfHeight = THREE.MathUtils.lerp(halfHeight, umbrellaFraming.halfHeight, blend);
+    const viewHalfWidth = THREE.MathUtils.lerp(halfWidth, umbrellaFraming.halfWidth, blend);
     const tan = Math.tan(THREE.MathUtils.degToRad(FOV / 2));
-    const distance = Math.max(halfHeight / tan, halfWidth / (tan * camera.aspect));
-    camera.position.set(focus.x, focus.y + 0.08 * span, focus.z + distance);
-    camera.lookAt(focus);
+    const distance = Math.max(viewHalfHeight / tan, viewHalfWidth / (tan * camera.aspect));
+    camera.position.set(viewFocus.x, viewFocus.y + 0.08 * span, viewFocus.z + distance);
+    camera.lookAt(viewFocus);
   };
   const resizeObserver = new ResizeObserver(fit);
   resizeObserver.observe(container);
   fit();
+  // Compile shaders off the main thread (parallel compile) so the first frame does not freeze the page.
+  await renderer.compileAsync(scene, camera);
 
   // ---------- state ----------
   const clock = new THREE.Clock();
@@ -215,6 +233,11 @@ export async function createAvatarScene(container: HTMLElement, { modelUrl, redu
     const time = clock.elapsedTime;
     if (time - lastPointer > 3) lookTarget.set(Math.sin(time * 0.37) * 0.35 * motion, Math.sin(time * 0.23) * 0.15 * motion);
     look.lerp(lookTarget, 0.06);
+    if (umbrella !== umbrellaTarget) {
+      const step = reducedMotion ? 1 : delta / UMBRELLA_SECONDS;
+      umbrella = umbrellaTarget > umbrella ? Math.min(umbrellaTarget, umbrella + step) : Math.max(umbrellaTarget, umbrella - step);
+      fit();
+    }
     rig.update({
       time,
       delta,
@@ -223,6 +246,7 @@ export async function createAvatarScene(container: HTMLElement, { modelUrl, redu
       wave: waveAmount(time),
       waveTime: time - waveStart,
       blink: blinkAmount(time),
+      umbrella,
       motion,
     });
     renderer.render(scene, camera);
@@ -242,6 +266,10 @@ export async function createAvatarScene(container: HTMLElement, { modelUrl, redu
 
   return {
     wave,
+    setUmbrella: (open) => {
+      umbrellaTarget = open ? 1 : 0;
+      schedule();
+    },
     dispose: () => {
       if (frame) cancelAnimationFrame(frame);
       frame = 0;

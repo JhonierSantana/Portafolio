@@ -1,10 +1,11 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { useTranslations } from "next-intl";
 import { FaPaperPlane } from "react-icons/fa6";
 import { sendContactMessage, type ContactFormState } from "@/lib/email";
 import { Button } from "@/components/ui/button";
+import { BottleMessage } from "@/components/sections/bottle-message";
 
 const initialState: ContactFormState = { status: "idle" };
 
@@ -14,6 +15,12 @@ const fieldClass =
 export function ContactForm() {
   const contactTexts = useTranslations("contact");
   const [formState, submitForm, isSending] = useActionState(sendContactMessage, initialState);
+  // The bottle scene belongs to one specific successful submission; "send another" dismisses it.
+  const [dismissedState, setDismissedState] = useState<ContactFormState | null>(null);
+
+  if (formState.status === "success" && formState !== dismissedState) {
+    return <BottleMessage onSendAnother={() => setDismissedState(formState)} />;
+  }
 
   return (
     <form action={submitForm} className="mt-5 flex flex-col gap-5">
@@ -48,14 +55,6 @@ export function ContactForm() {
         {isSending ? contactTexts("sending") : contactTexts("submit")}
       </Button>
 
-      {formState.status === "success" && (
-        <p
-          role="status"
-          className="rounded-md border border-signal/60 bg-signal/10 px-3 py-2 text-sm text-signal"
-        >
-          {contactTexts("success")}
-        </p>
-      )}
       {formState.status === "error" && (
         <p
           role="alert"

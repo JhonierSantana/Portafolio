@@ -1,10 +1,18 @@
 {
   "meta": {
-    "title": "Jhonier Santana | Desarrollador Frontend",
-    "description": "Desarrollador de Software Frontend especializado en React, React Native y Node.js."
+    "title": "Jhonier Santana | Desarrollador Fullstack",
+    "description": "Desarrollador de Software Fullstack especializado en React, React Native y Node.js, con experiencia en desarrollo asistido por IA (Claude Code)."
   },
   "a11y": {
     "skipToContent": "Saltar al contenido principal"
+  },
+  "intro": {
+    "loading": "Cargando portafolio",
+    "skip": "Saltar intro"
+  },
+  "intro": {
+    "loading": "Cargando portafolio",
+    "skip": "Saltar intro"
   },
   "nav": {
     "home": "Inicio",
@@ -12,19 +20,21 @@
     "about": "Sobre mí",
     "contact": "Contacto",
     "menu": "Abrir menú",
-    "roleTag": "Desarrollador FullStack",
+    "roleTag": "Desarrollador Fullstack",
     "menuTitle": "Menú de navegación",
     "close": "Cerrar menú"
   },
   "hero": {
     "greeting": "Hola, soy",
     "name": "Jhonier Santana",
-    "role": "Desarrollador de Software Frontend",
+    "role": "Desarrollador de Software Fullstack",
     "tagline": "React · React Native · Node.js · TypeScript",
-    "summary": "Más de 2 años de experiencia diseñando, desarrollando y manteniendo aplicaciones web, móviles y de escritorio, con foco en UX/UI, arquitectura frontend escalable e integración de APIs REST.",
+    "summary": "Más de 2 años de experiencia diseñando, desarrollando y manteniendo aplicaciones web, móviles y de escritorio, con foco en UX/UI, arquitectura escalable, integración de APIs REST y desarrollo asistido por IA con Claude Code.",
     "cta": "Ver proyectos",
     "cvLabel": "Descargar CV",
-    "avatarLabel": "Avatar 3D de Jhonier: haz clic para saludar"
+    "avatarLabel": "Avatar 3D de Jhonier: haz clic para saludar",
+    "availability": "Disponible para nuevas oportunidades",
+    "availability": "Disponible para nuevas oportunidades"
   },
   "experience": {
     "title": "Experiencia",
@@ -98,7 +108,7 @@
       },
       {
         "label": "Herramientas y metodologías",
-        "items": ["Git", "GitHub", "Scrum", "CI/CD"]
+        "items": ["Git", "GitHub", "Scrum", "CI/CD", "Claude Code"]
       }
     ]
   },
@@ -195,7 +205,11 @@
     "emailLabel": "Correo",
     "messageLabel": "Mensaje",
     "submit": "Enviar mensaje",
-    "success": "Mensaje enviado. Te responderé pronto.",
+    "bottle": {
+      "sailing": "Tu mensaje va en una botella, rumbo a mi orilla…",
+      "arrived": "¡Tu botella llegó a la orilla! Te responderé pronto.",
+      "again": "Enviar otra botella"
+    },
     "error": "Hubo un error al enviar el mensaje. Intenta de nuevo.",
     "infoTitle": "Hablemos",
     "infoBody": "Cuéntame sobre tu idea, un proyecto o una oportunidad. Te responderé lo antes posible.",
@@ -209,5 +223,61 @@
     "cta": "¿Tienes una idea? Hablemos.",
     "email": "Escríbeme",
     "rights": "Todos los derechos reservados."
+  },
+  "ambience": {
+    "weatherNow": "Ahora en Socorro",
+    "weatherHint": "La lluvia de este sitio sigue el clima real de Socorro, Santander",
+    "levels": {
+      "clear": "sin lluvia",
+      "light": "lluvia ligera",
+      "heavy": "lluvia fuerte",
+      "storm": "tormenta"
+    }
+  },
+  "palette": {
+    "open": "Abrir paleta de comandos (Ctrl + K)",
+    "title": "Paleta de comandos",
+    "placeholder": "Escribe un comando o busca…",
+    "empty": "Sin resultados. Prueba con «whoami».",
+    "groups": {
+      "navigate": "Ir a",
+      "actions": "Acciones",
+      "fun": "Extras"
+    },
+    "commands": {
+      "cv": "Descargar CV",
+      "copyEmail": "Copiar correo",
+      "language": "Switch to English",
+      "storm": "Desatar una tormenta"
+    },
+    "copied": "Copiado: {email}",
+    "stormStarted": "Tormenta en camino… sube al inicio de la página para verla.",
+    "whoami": "Jhonier Santana. Desarrollador fullstack en Socorro, Santander, que también construye con IA (Claude Code). Me encantan el mar y el color azul: por eso aquí hay olas, lluvia y burbujas.",
+    "hints": {
+      "move": "moverse",
+      "run": "ejecutar",
+      "close": "cerrar"
+    }
+  },
+  "log": {
+    "title": "Bitácora",
+    "subtitle": "Lo último que he estado construyendo, directo desde mi GitHub.",
+    "profile": "Ver todo en GitHub",
+    "kinds": {
+      "commit": "Commit en {repo}",
+      "pr-opened": "Abrí el PR #{number} en {repo}",
+      "pr-merged": "Fusioné el PR #{number} en {repo}",
+      "pr-closed": "Cerré el PR #{number} en {repo}",
+      "branch": "Nueva rama {detail} en {repo}",
+      "repo": "Nuevo repositorio: {repo}",
+      "tag": "Nueva versión {detail} en {repo}"
+    }
+  },
+  "depth": {
+    "zones": {
+      "surface": "Superficie",
+      "reef": "Arrecife",
+      "abyss": "Abismo"
+    }
   }
 }
