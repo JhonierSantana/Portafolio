@@ -8,11 +8,15 @@ import { Button } from "@/components/ui/button";
 import { Avatar3D } from "@/components/sections/avatar-3d";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { WeatherBadge } from "@/components/ambience/weather-badge";
+import { createRainLayer } from "@/components/ambience/rain-layer";
 import { WaveDivider } from "@/components/ui/wave-divider";
 import { fadeUp, staggerContainer } from "@/lib/motion";
 import { cvHref } from "@/lib/contact-info";
 
 const STACK = ["React", "React Native", "Node.js", "TypeScript"];
+
+/** The hero card is opaque and would hide the background rain, so it gets its own, fainter layer. */
+const HeroRain = createRainLayer({ count: 36, seed: 4096 });
 
 export function Hero() {
   const heroTexts = useTranslations("hero");
@@ -25,9 +29,10 @@ export function Hero() {
         initial="hidden"
         animate="visible"
         variants={staggerContainer(0.07, 0.05)}
-        className="bg-card px-6 py-16 sm:py-20"
+        className="relative overflow-hidden bg-card px-6 py-16 sm:py-20"
       >
-        <div className="mx-auto flex max-w-5xl flex-col items-center gap-10 text-center md:flex-row md:items-center md:justify-center md:gap-14 md:text-left">
+        <HeroRain className="absolute inset-0 opacity-60" />
+        <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-10 text-center md:flex-row md:items-center md:justify-center md:gap-14 md:text-left">
           <motion.div
             variants={{ hidden: { opacity: 0, scale: 0.9 }, visible: { opacity: 1, scale: 1 } }}
             transition={{ duration: 0.6 }}

@@ -42,7 +42,7 @@ export function DepthGauge() {
       </div>
       <motion.div
         style={{ y: gaugeY }}
-        className="absolute right-2 top-0 hidden flex-col items-end rounded-sm border border-signal/40 bg-background/85 px-2 py-1 font-data leading-tight backdrop-blur-sm md:flex"
+        className="absolute right-2 top-0 hidden flex-col items-end rounded-sm border border-signal/40 bg-background px-2 py-1 font-data leading-tight md:flex"
       >
         <span ref={depthRef} className="text-xs text-signal">
           {depthAt(0)}
