@@ -1,11 +1,13 @@
 "use client";
 
 import { motion } from "motion/react";
+import { ArrowRight, Download } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { Avatar3D } from "@/components/sections/avatar-3d";
 import { StatusBadge } from "@/components/ui/status-badge";
+import { WeatherBadge } from "@/components/ambience/weather-badge";
 import { WaveDivider } from "@/components/ui/wave-divider";
 import { fadeUp, staggerContainer } from "@/lib/motion";
 import { cvHref } from "@/lib/contact-info";
@@ -79,17 +81,22 @@ export function Hero() {
               transition={{ duration: 0.5 }}
               className="flex flex-wrap justify-center gap-3 pt-2 md:justify-start"
             >
-              <Button className="rounded-sm" nativeButton={false} render={<Link href="/proyectos" />}>
+              <Button variant="signal" size="cta" nativeButton={false} render={<Link href="/proyectos" />}>
                 {heroTexts("cta")}
+                <ArrowRight data-icon="inline-end" aria-hidden className="transition-transform group-hover/button:translate-x-1" />
               </Button>
               <Button
-                className="rounded-sm"
-                variant="outline"
+                variant="signal-outline"
+                size="cta"
                 nativeButton={false}
                 render={<a href={cvHref(locale)} download />}
               >
+                <Download data-icon="inline-start" aria-hidden />
                 {heroTexts("cvLabel")}
               </Button>
+            </motion.div>
+            <motion.div variants={fadeUp} transition={{ duration: 0.5 }} className="flex justify-center md:justify-start">
+              <WeatherBadge />
             </motion.div>
           </div>
         </div>

@@ -4,7 +4,6 @@ import { Link } from "@/i18n/navigation";
 import { WaveDivider } from "@/components/ui/wave-divider";
 import { contactInfo } from "@/lib/contact-info";
 import { navRoutes } from "@/lib/nav-routes";
-import { WeatherBadge } from "@/components/ambience/weather-badge";
 
 const socials = [
   { label: "Email", href: `mailto:${contactInfo.email}`, Icon: FaEnvelope, external: false },
@@ -57,12 +56,9 @@ export function Footer() {
           </div>
 
           <div className="mt-10 flex flex-col-reverse items-center justify-between gap-4 border-t border-border pt-6 sm:flex-row">
-            <div className="flex flex-col items-center gap-1 sm:items-start">
-              <p className="text-sm text-muted-foreground">
-                © {year} Jhonier Santana. {footerTexts("rights")}
-              </p>
-              <WeatherBadge />
-            </div>
+            <p className="text-sm text-muted-foreground">
+              © {year} Jhonier Santana. {footerTexts("rights")}
+            </p>
             <ul className="flex gap-3">
               {socials.map(({ label, href, Icon, external }) => (
                 <li key={label}>

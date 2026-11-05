@@ -1,31 +1,39 @@
 "use client";
 
-import { CloudDrizzle, CloudLightning, CloudRain, CloudSun } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { PulseDot } from "@/components/ui/pulse-dot";
 import { useStore } from "@/hooks/use-store";
 import { ambienceStore } from "@/lib/ambience-store";
-import type { RainLevel } from "@/lib/weather";
+import { contactInfo } from "@/lib/contact-info";
 
-const ICONS: Record<RainLevel, typeof CloudRain> = {
-  clear: CloudSun,
-  light: CloudDrizzle,
-  heavy: CloudRain,
-  storm: CloudLightning,
-};
+/** "Socorro, Santander, CO" -> "Socorro, CO". */
+const locationParts = contactInfo.location.split(",").map((part) => part.trim());
+const SHORT_LOCATION = `${locationParts[0]}, ${locationParts.at(-1)}`;
 
-/** Live weather in Socorro, which is what drives the rain on the site. Hidden until it loads. */
+/**
+ * Live weather where Jhonier is, which is what drives the rain on the site.
+ * Its line is reserved while the weather loads, so the hero never jumps.
+ */
 export function WeatherBadge() {
   const ambienceTexts = useTranslations("ambience");
   const { weather } = useStore(ambienceStore);
-  if (!weather) return null;
-  const Icon = ICONS[weather.level];
 
   return (
-    <p className="inline-flex items-center gap-2 font-data text-xs text-muted-foreground" title={ambienceTexts("weatherHint")}>
-      <Icon aria-hidden className="size-4 text-signal" />
-      <span>
-        {ambienceTexts("weatherNow")} · {weather.temperatureC}°C · {ambienceTexts(`levels.${weather.level}`)}
-      </span>
+    <p
+      title={ambienceTexts("liveHint")}
+      className={`inline-flex min-h-5 items-center gap-2 font-data text-xs transition-opacity duration-700 ${
+        weather ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      {weather && (
+        <>
+          <PulseDot />
+          <span className="text-signal">{ambienceTexts("live")}</span>
+          <span className="text-muted-foreground">
+            · {SHORT_LOCATION} · {weather.temperatureC}°C, {ambienceTexts(`levels.${weather.level}`)}
+          </span>
+        </>
+      )}
     </p>
   );
 }
