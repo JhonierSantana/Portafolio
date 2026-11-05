@@ -7,3 +7,6 @@ export const contactInfo = {
   githubUrl: "https://github.com/JhonierSantana",
   linkedinUrl: "https://www.linkedin.com/in/jhonier-yesid-santana-pedroza-457492265",
 } as const;
+
+/** Downloadable CV for a locale (files live in public/cv/). */
+export const cvHref = (locale: string) => `/cv/jhonier-santana-cv-${locale}.pdf`;

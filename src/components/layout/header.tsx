@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { LocaleSwitcher } from "./locale-switcher";
 import { MobileNav } from "./mobile-nav";
 import { FloatingNav } from "./floating-nav";
+import { CommandPaletteTrigger } from "@/components/command-palette/command-palette-trigger";
 
 export function Header() {
   const navTexts = useTranslations("nav");
@@ -21,10 +22,11 @@ export function Header() {
 
         <FloatingNav />
 
-        <div className="col-start-3 flex items-center justify-self-end">
-          <div className="hidden md:block">
+        <div className="col-start-3 flex items-center gap-1 justify-self-end">
+          <div className="mr-2 hidden md:block">
             <LocaleSwitcher />
           </div>
+          <CommandPaletteTrigger />
           <MobileNav />
         </div>
       </div>

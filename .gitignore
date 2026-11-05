@@ -48,3 +48,6 @@ next-env.d.ts
 # docs (keep README.md tracked, ignore the rest)
 *.md
 !README.md
+
+# generated CV copies (npm run cv)
+/dist-cv/

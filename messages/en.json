@@ -1,10 +1,18 @@
 {
   "meta": {
-    "title": "Jhonier Santana | Frontend Developer",
-    "description": "Frontend Software Developer specialized in React, React Native and Node.js."
+    "title": "Jhonier Santana | Fullstack Developer",
+    "description": "Fullstack Software Developer specialized in React, React Native and Node.js, with experience in AI-assisted development (Claude Code)."
   },
   "a11y": {
     "skipToContent": "Skip to main content"
+  },
+  "intro": {
+    "loading": "Loading portfolio",
+    "skip": "Skip intro"
+  },
+  "intro": {
+    "loading": "Loading portfolio",
+    "skip": "Skip intro"
   },
   "nav": {
     "home": "Home",
@@ -12,19 +20,21 @@
     "about": "About",
     "contact": "Contact",
     "menu": "Open menu",
-    "roleTag": "FullStack Developer",
+    "roleTag": "Fullstack Developer",
     "menuTitle": "Navigation menu",
     "close": "Close menu"
   },
   "hero": {
     "greeting": "Hi, I'm",
     "name": "Jhonier Santana",
-    "role": "Frontend Software Developer",
+    "role": "Fullstack Software Developer",
     "tagline": "React · React Native · Node.js · TypeScript",
-    "summary": "2+ years of experience designing, developing and maintaining web, mobile and desktop applications, with a focus on UX/UI, scalable frontend architecture and REST API integration.",
+    "summary": "2+ years of experience designing, developing and maintaining web, mobile and desktop applications, with a focus on UX/UI, scalable architecture, REST API integration and AI-assisted development with Claude Code.",
     "cta": "View projects",
     "cvLabel": "Download CV",
-    "avatarLabel": "Jhonier's 3D avatar: click to say hi"
+    "avatarLabel": "Jhonier's 3D avatar: click to say hi",
+    "availability": "Open to new opportunities",
+    "availability": "Open to new opportunities"
   },
   "experience": {
     "title": "Experience",
@@ -98,7 +108,7 @@
       },
       {
         "label": "Tools & methodologies",
-        "items": ["Git", "GitHub", "Scrum", "CI/CD"]
+        "items": ["Git", "GitHub", "Scrum", "CI/CD", "Claude Code"]
       }
     ]
   },
@@ -195,7 +205,11 @@
     "emailLabel": "Email",
     "messageLabel": "Message",
     "submit": "Send message",
-    "success": "Message sent. I'll get back to you soon.",
+    "bottle": {
+      "sailing": "Your message is in a bottle, heading for my shore…",
+      "arrived": "Your bottle reached the shore! I'll get back to you soon.",
+      "again": "Send another bottle"
+    },
     "error": "There was an error sending the message. Please try again.",
     "infoTitle": "Let's talk",
     "infoBody": "Tell me about your idea, a project or an opportunity. I'll get back to you as soon as I can.",
@@ -209,5 +223,61 @@
     "cta": "Have an idea? Let's talk.",
     "email": "Email me",
     "rights": "All rights reserved."
+  },
+  "ambience": {
+    "weatherNow": "Now in Socorro",
+    "weatherHint": "The rain on this site follows the real weather in Socorro, Colombia",
+    "levels": {
+      "clear": "no rain",
+      "light": "light rain",
+      "heavy": "heavy rain",
+      "storm": "storm"
+    }
+  },
+  "palette": {
+    "open": "Open command palette (Ctrl + K)",
+    "title": "Command palette",
+    "placeholder": "Type a command or search…",
+    "empty": "No results. Try “whoami”.",
+    "groups": {
+      "navigate": "Go to",
+      "actions": "Actions",
+      "fun": "Extras"
+    },
+    "commands": {
+      "cv": "Download CV",
+      "copyEmail": "Copy email",
+      "language": "Cambiar a español",
+      "storm": "Unleash a storm"
+    },
+    "copied": "Copied: {email}",
+    "stormStarted": "Storm incoming… scroll to the top of the page to see it.",
+    "whoami": "Jhonier Santana. Fullstack developer from Socorro, Colombia, who also builds with AI (Claude Code). I love the sea and the colour blue: that is why there are waves, rain and bubbles here.",
+    "hints": {
+      "move": "move",
+      "run": "run",
+      "close": "close"
+    }
+  },
+  "log": {
+    "title": "Captain's log",
+    "subtitle": "What I've been building lately, straight from my GitHub.",
+    "profile": "See everything on GitHub",
+    "kinds": {
+      "commit": "Commit in {repo}",
+      "pr-opened": "Opened PR #{number} in {repo}",
+      "pr-merged": "Merged PR #{number} in {repo}",
+      "pr-closed": "Closed PR #{number} in {repo}",
+      "branch": "New branch {detail} in {repo}",
+      "repo": "New repository: {repo}",
+      "tag": "New release {detail} in {repo}"
+    }
+  },
+  "depth": {
+    "zones": {
+      "surface": "Surface",
+      "reef": "Reef",
+      "abyss": "Abyss"
+    }
   }
 }

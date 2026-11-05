@@ -17,7 +17,7 @@ test("navigates through main sections in Spanish", async ({ page }) => {
 
 test("switches locale to English", async ({ page }) => {
   await page.goto("/es");
-  await page.getByRole("button", { name: "en" }).click();
+  await page.getByRole("button", { name: "en", exact: true }).click();
   await expect(page).toHaveURL(/\/en$/);
   await expect(page.getByRole("heading", { name: "Jhonier Santana" })).toBeVisible();
 });

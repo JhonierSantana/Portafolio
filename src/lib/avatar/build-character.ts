@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { buildUmbrella } from "@/lib/avatar/build-umbrella";
 
 /**
  * Procedural stylised version of Jhonier (beige six-panel cap, dark curly hair,
@@ -16,8 +17,11 @@ export type CharacterPose = {
   waveTime: number;
   /** 0 = eyes open, 1 = closed. */
   blink: number;
-  /** Elapsed seconds. */
+  /** Elapsed seconds, and seconds since the previous frame. */
   time: number;
+  delta: number;
+  /** 0 = no umbrella, 1 = umbrella fully open (it rains hard). */
+  umbrella: number;
   /** 1 = full idle motion, lower values calm it down (reduced motion). */
   motion: number;
 };
@@ -28,6 +32,8 @@ export type Character = {
   focus: THREE.Vector3;
   /** Half height / half width of the framing box around `focus`. */
   frame: { halfHeight: number; halfWidth: number };
+  /** Wider framing that keeps the open umbrella in view. */
+  umbrellaFraming: { focus: THREE.Vector3; halfHeight: number; halfWidth: number };
   update: (pose: CharacterPose) => void;
 };
 
@@ -311,6 +317,8 @@ export function buildCharacter(): Character {
     return { side, shoulder, elbow, hand };
   };
   const arms = [makeArm(1), makeArm(-1)];
+  const umbrellaRig = buildUmbrella();
+  body.add(umbrellaRig.group);
 
   // ---------- head (built at the origin so its surface can be raycast) ----------
   const headPivot = new THREE.Group();
@@ -482,7 +490,8 @@ export function buildCharacter(): Character {
   head.position.set(0, 0.42, 0);
   headPivot.add(head);
 
-  const update = ({ lookX, lookY, wave, waveTime, blink, time, motion }: CharacterPose) => {
+  const update = ({ lookX, lookY, wave, waveTime, blink, time, delta, umbrella, motion }: CharacterPose) => {
+    umbrellaRig.update(umbrella, delta);
     const breath = Math.sin(time * 1.6) * motion;
     body.rotation.y = lookX * 0.08;
     torso.scale.set(1 + 0.006 * breath, 1 + 0.008 * breath, TORSO_Z * (1 + 0.015 * breath));
@@ -503,14 +512,23 @@ export function buildCharacter(): Character {
 
     const flap = Math.sin(waveTime * 9) * 0.35;
     for (const arm of arms) {
+      // The right arm waves; the left one holds the umbrella up.
       const raise = arm.side > 0 ? wave : 0;
+      const hold = arm.side < 0 ? umbrella : 0;
+      const rest = (1 - raise) * (1 - hold);
       const sway = Math.sin(time * 1.6 + arm.side) * 0.012 * motion;
-      arm.shoulder.rotation.set(lerp(0, -0.3, raise), 0, arm.side * (0.11 + sway) * (1 - raise) + raise * 1.7);
-      arm.elbow.rotation.set(lerp(-0.12, 0, raise), 0, arm.side * 0.05 * (1 - raise) + raise * (1.3 + flap));
+      arm.shoulder.rotation.set(lerp(0, -0.3, raise) + hold * -1.0, 0, arm.side * (0.11 + sway) * rest + raise * 1.7);
+      arm.elbow.rotation.set(lerp(-0.12, 0, raise) + hold * -1.08, 0, arm.side * 0.05 * rest + raise * (1.3 + flap));
       arm.hand.rotation.set(0, lerp((-arm.side * Math.PI) / 2, 0, raise), raise * flap * 0.4);
     }
   };
 
   // Framing is shifted toward the waving (screen-right) arm so the raised hand stays in view.
-  return { root, focus: new THREE.Vector3(0.12, 1.3, 0), frame: { halfHeight: 1.1, halfWidth: 1.22 }, update };
+  return {
+    root,
+    focus: new THREE.Vector3(0.12, 1.3, 0),
+    frame: { halfHeight: 1.1, halfWidth: 1.22 },
+    umbrellaFraming: { focus: new THREE.Vector3(-0.15, 1.45, 0), halfHeight: 1.3, halfWidth: 1.6 },
+    update,
+  };
 }

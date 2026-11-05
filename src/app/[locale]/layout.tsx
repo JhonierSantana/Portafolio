@@ -7,7 +7,11 @@ import { routing } from "@/i18n/routing";
 import { siteUrl } from "@/lib/site";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { RainBackground } from "@/components/layout/rain-background";
+import { AmbientBackground } from "@/components/ambience/ambient-background";
+import { AmbienceController } from "@/components/ambience/ambience-controller";
+import { DepthGauge } from "@/components/layout/depth-gauge";
+import { IntroLoader } from "@/components/intro/intro-loader";
+import { IntroSeenScript } from "@/components/intro/intro-seen-script";
 import { HoverRipple } from "@/components/motion/hover-ripple";
 import "../globals.css";
 
@@ -73,17 +77,22 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
+      suppressHydrationWarning
       className={`dark ${fraunces.variable} ${plexSans.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <IntroSeenScript />
         <a
           href="#main-content"
           className="sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:left-4 focus-visible:top-4 focus-visible:z-[100] focus-visible:border focus-visible:border-signal focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-sm"
         >
           {accessibilityTexts("skipToContent")}
         </a>
-        <RainBackground />
+        <AmbientBackground />
         <NextIntlClientProvider>
+          <AmbienceController />
+          <IntroLoader />
+          <DepthGauge />
           <Header />
           <main id="main-content" className="flex-1 overflow-x-clip">
             {children}

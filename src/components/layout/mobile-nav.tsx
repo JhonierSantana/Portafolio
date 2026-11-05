@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { navRoutes } from "@/lib/nav-routes";
+import { useIsClient } from "@/hooks/use-is-client";
 import { LocaleSwitcher } from "./locale-switcher";
 
 const DRAWER_EASING = [0.32, 0.72, 0, 1] as const;
@@ -24,19 +25,13 @@ const linkVariants = {
   visible: { opacity: 1, x: 0 },
 };
 
-const subscribeToNothing = () => () => {};
-
 export function MobileNav() {
   const navTexts = useTranslations("nav");
   const pathname = usePathname();
   const reduceMotion = useReducedMotion();
   const [isOpen, setIsOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
-  const isClient = useSyncExternalStore(
-    subscribeToNothing,
-    () => true,
-    () => false,
-  );
+  const isClient = useIsClient();
 
   const closeDrawer = () => setIsOpen(false);
 
