@@ -10,10 +10,6 @@
     "loading": "Loading portfolio",
     "skip": "Skip intro"
   },
-  "intro": {
-    "loading": "Loading portfolio",
-    "skip": "Skip intro"
-  },
   "nav": {
     "home": "Home",
     "projects": "Projects",
@@ -33,7 +29,6 @@
     "cta": "View projects",
     "cvLabel": "Download CV",
     "avatarLabel": "Jhonier's 3D avatar: click to say hi",
-    "availability": "Open to new opportunities",
     "availability": "Open to new opportunities"
   },
   "experience": {
@@ -92,7 +87,18 @@
     "groups": [
       {
         "label": "Frontend",
-        "items": ["React.js", "React Native", "Electron.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "SASS", "Tailwind CSS", "Chakra UI"]
+        "items": [
+          "React.js",
+          "React Native",
+          "Electron.js",
+          "TypeScript",
+          "JavaScript (ES6+)",
+          "HTML5",
+          "CSS3",
+          "SASS",
+          "Tailwind CSS",
+          "Chakra UI"
+        ]
       },
       {
         "label": "State management",
@@ -143,9 +149,18 @@
           "company": "Seguridad Penta / Bartik",
           "period": "May 2025 – Present",
           "points": [
-            { "lead": "Design and build from scratch", "text": "Designed and implemented the frontend architecture of 4 SaaS applications, integrating REST APIs and building intuitive interfaces aligned with business goals." },
-            { "lead": "Cross-platform optimization", "text": "Led UX/UI improvements across a suite of 5 applications (web, mobile and desktop), reducing friction in key flows and raising overall usability." },
-            { "lead": "Quality and maintainability", "text": "Led the migration of critical dependencies and ran cross-platform functional testing, reducing technical debt and keeping the products stable." }
+            {
+              "lead": "Design and build from scratch",
+              "text": "Designed and implemented the frontend architecture of 4 SaaS applications, integrating REST APIs and building intuitive interfaces aligned with business goals."
+            },
+            {
+              "lead": "Cross-platform optimization",
+              "text": "Led UX/UI improvements across a suite of 5 applications (web, mobile and desktop), reducing friction in key flows and raising overall usability."
+            },
+            {
+              "lead": "Quality and maintainability",
+              "text": "Led the migration of critical dependencies and ran cross-platform functional testing, reducing technical debt and keeping the products stable."
+            }
           ]
         },
         {
@@ -153,8 +168,14 @@
           "company": "Attendv / Betek",
           "period": "May 2024 – October 2024",
           "points": [
-            { "lead": "Product building", "text": "Built a complete on-demand services web application from scratch with React and Firebase, implementing dynamic features that improved user interaction." },
-            { "lead": "Performance and DevOps", "text": "Optimized load speed, semantic structure and SEO, and set up CI/CD pipelines to automate deployments and speed up the team's deliveries." }
+            {
+              "lead": "Product building",
+              "text": "Built a complete on-demand services web application from scratch with React and Firebase, implementing dynamic features that improved user interaction."
+            },
+            {
+              "lead": "Performance and DevOps",
+              "text": "Optimized load speed, semantic structure and SEO, and set up CI/CD pipelines to automate deployments and speed up the team's deliveries."
+            }
           ]
         },
         {
@@ -162,8 +183,14 @@
           "company": "Autonomic Mind",
           "period": "September 2023 – October 2023",
           "points": [
-            { "lead": "Complex problem solving", "text": "Created software solutions in several languages (Dart, Kotlin, R, Lua), applying functional programming and recursion to solve specific business logic." },
-            { "lead": "Collaborative work", "text": "Managed version control with Git in remote environments, ensuring clean code integration." }
+            {
+              "lead": "Complex problem solving",
+              "text": "Created software solutions in several languages (Dart, Kotlin, R, Lua), applying functional programming and recursion to solve specific business logic."
+            },
+            {
+              "lead": "Collaborative work",
+              "text": "Managed version control with Git in remote environments, ensuring clean code integration."
+            }
           ]
         },
         {
@@ -171,7 +198,10 @@
           "company": "Holberton School",
           "period": "September 2022 – July 2023",
           "points": [
-            { "lead": "Full-stack projects", "text": "Built end-to-end applications with React, Python (Flask) and MySQL, reinforcing unit and integration testing and solving over 100 logic and data structure challenges." }
+            {
+              "lead": "Full-stack projects",
+              "text": "Built end-to-end applications with React, Python (Flask) and MySQL, reinforcing unit and integration testing and solving over 100 logic and data structure challenges."
+            }
           ]
         }
       ]
@@ -188,9 +218,21 @@
     },
     "education": "Education",
     "educationItems": [
-      { "title": "Frontend Development Certification", "institution": "Betek", "date": "November 2024" },
-      { "title": "Software Development Certification", "institution": "Holberton School", "date": "July 2023" },
-      { "title": "High School Diploma", "institution": "Instituto Técnico Industrial", "date": "November 2020" }
+      {
+        "title": "Frontend Development Certification",
+        "institution": "Betek",
+        "date": "November 2024"
+      },
+      {
+        "title": "Software Development Certification",
+        "institution": "Holberton School",
+        "date": "July 2023"
+      },
+      {
+        "title": "High School Diploma",
+        "institution": "Instituto Técnico Industrial",
+        "date": "November 2020"
+      }
     ],
     "languages": "Languages",
     "languageItems": [
@@ -225,8 +267,8 @@
     "rights": "All rights reserved."
   },
   "ambience": {
-    "weatherNow": "Now in Socorro",
-    "weatherHint": "The rain on this site follows the real weather in Socorro, Colombia",
+    "live": "Live",
+    "liveHint": "This site's background mirrors the real-time weather in Socorro",
     "levels": {
       "clear": "no rain",
       "light": "light rain",

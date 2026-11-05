@@ -13,7 +13,6 @@
   --font-display: var(--font-display);
   --color-signal: var(--signal);
   --color-signal-foreground: var(--signal-foreground);
-  --color-sea: var(--sea);
   --color-sea-deep: var(--sea-deep);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -75,7 +74,6 @@
   --ring: #d9d9d9;
   --signal: oklch(0.62 0.16 250);
   --signal-foreground: #0a0a0a;
-  --sea: #071a2e;
   --sea-deep: #04111f;
   --chart-1: oklch(0.62 0.16 250);
   --chart-2: #a3a3a3;
@@ -272,3 +270,4 @@ html[data-intro-seen] .intro-overlay {
 .intro-overlay {
   animation: intro-failsafe 0s 6s forwards;
 }
+

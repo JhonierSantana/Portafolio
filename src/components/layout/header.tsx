@@ -8,8 +8,9 @@ import { CommandPaletteTrigger } from "@/components/command-palette/command-pale
 export function Header() {
   const navTexts = useTranslations("nav");
 
+  // Solid on purpose: a backdrop blur re-blurs the moving rain behind it every frame and flickers.
   return (
-    <header className="sticky top-0 z-50 bg-background/90 backdrop-blur">
+    <header className="sticky top-0 z-50 bg-background">
       <div className="relative mx-auto grid max-w-5xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-6 py-4">
         <Link href="/" className="flex min-w-0 items-baseline gap-2 justify-self-start">
           <span className="font-display truncate text-base font-medium tracking-tight sm:text-lg">
