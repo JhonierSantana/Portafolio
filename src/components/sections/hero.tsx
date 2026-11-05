@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
-import { AvatarRing } from "@/components/sections/avatar-ring";
+import { Avatar3D } from "@/components/sections/avatar-3d";
 import { WaveDivider } from "@/components/ui/wave-divider";
 import { fadeUp, staggerContainer } from "@/lib/motion";
 import { contactInfo } from "@/lib/contact-info";
@@ -29,7 +29,7 @@ export function Hero() {
             variants={{ hidden: { opacity: 0, scale: 0.9 }, visible: { opacity: 1, scale: 1 } }}
             transition={{ duration: 0.6 }}
           >
-            <AvatarRing size="size-36 sm:size-44" imgSize={176} />
+            <Avatar3D label={heroTexts("avatarLabel")} className="h-72 w-[min(20rem,calc(100vw-3rem))] sm:h-[22rem] sm:w-[24rem]" />
           </motion.div>
 
           <div className="flex flex-col items-center gap-4 md:items-start">

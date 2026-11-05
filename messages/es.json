@@ -23,7 +23,8 @@
     "tagline": "React · React Native · Node.js · TypeScript",
     "summary": "Más de 2 años de experiencia diseñando, desarrollando y manteniendo aplicaciones web, móviles y de escritorio, con foco en UX/UI, arquitectura frontend escalable e integración de APIs REST.",
     "cta": "Ver proyectos",
-    "cvLabel": "Descargar CV"
+    "cvLabel": "Descargar CV",
+    "avatarLabel": "Avatar 3D de Jhonier: haz clic para saludar"
   },
   "experience": {
     "title": "Experiencia",
