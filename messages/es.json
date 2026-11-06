@@ -21,7 +21,6 @@
     "close": "Cerrar menú"
   },
   "hero": {
-    "greeting": "Hola, soy",
     "name": "Jhonier Santana",
     "role": "Desarrollador de Software Fullstack",
     "tagline": "React · React Native · Node.js · TypeScript",
@@ -32,14 +31,20 @@
     "availability": "Disponible para nuevas oportunidades"
   },
   "experience": {
-    "title": "Experiencia",
-    "current": "Actual",
+    "title": "Mi experiencia",
+    "intro": "Los equipos y productos en los que he trabajado, del más reciente al primero.",
+    "present": "Actualidad",
+    "years": "{count, plural, one {# año} other {# años}}",
+    "months": "{count, plural, one {# mes} other {# meses}}",
+    "and": " y ",
+    "total": "de experiencia profesional",
+    "jump": "Ir a {role} en {company} ({year})",
     "items": [
       {
+        "id": "bartik",
         "role": "Desarrollador de Software",
         "company": "Seguridad Penta / Bartik",
         "location": "Bogotá, Colombia",
-        "period": "Mayo 2025 - Actualidad",
         "points": [
           "Lideré mejoras de UX/UI en una suite de 5 aplicaciones web, móviles y de escritorio, optimizando flujos de trabajo clave.",
           "Diseñé e implementé la arquitectura frontend de 4 aplicaciones SaaS, integrando APIs REST.",
@@ -47,10 +52,10 @@
         ]
       },
       {
+        "id": "attendv",
         "role": "Desarrollador Frontend",
         "company": "Attendv / Betek",
         "location": "Medellín, Colombia",
-        "period": "Mayo 2024 - Octubre 2024",
         "points": [
           "Desarrollé una aplicación web completa para servicios bajo demanda con React y Firebase.",
           "Optimicé el rendimiento y el SEO de la aplicación mejorando velocidad de carga y visibilidad.",
@@ -58,20 +63,20 @@
         ]
       },
       {
+        "id": "autonomic-mind",
         "role": "Desarrollador de Software (Freelance)",
         "company": "Autonomic Mind",
         "location": "Medellín, Colombia",
-        "period": "Septiembre 2023 - Octubre 2023",
         "points": [
           "Desarrollé soluciones en múltiples lenguajes (Dart, Kotlin, R, Lua) aplicando programación funcional y recursión.",
           "Implementé control de versiones con Git en un entorno colaborativo."
         ]
       },
       {
+        "id": "holberton",
         "role": "Desarrollador de Software (Trainee)",
         "company": "Holberton School",
         "location": "Bogotá, Colombia",
-        "period": "Septiembre 2022 - Julio 2023",
         "points": [
           "Desarrollé proyectos Full-Stack con React, Python (Flask) y MySQL.",
           "Apliqué pruebas unitarias y de integración para garantizar calidad y robustez del código.",
@@ -148,7 +153,7 @@
       { "value": "100+", "label": "desafíos de lógica y estructuras de datos" }
     ],
     "impact": {
-      "title": "Experiencia e impacto",
+      "title": "Logros e impacto",
       "current": "Actual",
       "items": [
         {
@@ -210,6 +215,37 @@
               "text": "Desarrollé aplicaciones de extremo a extremo con React, Python (Flask) y MySQL, reforzando las pruebas unitarias y de integración y resolviendo más de 100 desafíos de lógica y estructuras de datos."
             }
           ]
+        }
+      ]
+    },
+    "route": {
+      "title": "Mi ruta",
+      "intro": "Dónde han estado los equipos con los que he construido, desde mi ciudad natal.",
+      "cities": {
+        "socorro": "Socorro",
+        "bogota": "Bogotá",
+        "medellin": "Medellín"
+      },
+      "stops": [
+        {
+          "id": "home",
+          "label": "Mi ciudad natal",
+          "detail": "Socorro, Santander. Mi ciudad natal y el lugar desde el que trabajo hoy."
+        },
+        {
+          "id": "holberton",
+          "label": "Holberton School",
+          "detail": "Formación intensiva como desarrollador de software, con proyectos fullstack en React, Flask y MySQL."
+        },
+        {
+          "id": "medellin",
+          "label": "Autonomic Mind · Attendv / Betek",
+          "detail": "Trabajo freelance y mi primer rol como desarrollador frontend: una app web con React y Firebase."
+        },
+        {
+          "id": "bartik",
+          "label": "Seguridad Penta / Bartik",
+          "detail": "Rol actual: creación y evolución de la arquitectura frontend de 4 aplicaciones SaaS, e implementación y mejora del diseño UX/UI en una suite de 5 aplicaciones web, móviles y de escritorio."
         }
       ]
     },

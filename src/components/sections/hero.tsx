@@ -44,13 +44,6 @@ export function Hero() {
             <motion.div variants={fadeUp} transition={{ duration: 0.4 }}>
               <StatusBadge>{heroTexts("availability")}</StatusBadge>
             </motion.div>
-            <motion.p
-              variants={fadeUp}
-              transition={{ duration: 0.4 }}
-              className="font-data text-sm text-signal"
-            >
-              {heroTexts("greeting")}
-            </motion.p>
             <motion.h1
               variants={fadeUp}
               transition={{ duration: 0.5 }}

@@ -2,7 +2,6 @@ import type { ComponentType } from "react";
 import { getTranslations } from "next-intl/server";
 import { FaEnvelope, FaGithub, FaLinkedin, FaLocationDot, FaPhone } from "react-icons/fa6";
 import { ContactForm } from "@/components/sections/contact-form";
-import { Reveal } from "@/components/motion/reveal";
 import { WaveCard } from "@/components/ui/wave-card";
 import { contactInfo } from "@/lib/contact-info";
 
@@ -36,15 +35,15 @@ export default async function ContactPage() {
 
   return (
     <section className="mx-auto max-w-5xl px-6 py-16">
-      <Reveal>
+      <div>
         <h1 className="font-display text-4xl font-medium tracking-tight text-signal sm:text-5xl">
           {contactTexts("title")}
         </h1>
         <p className="mt-3 max-w-xl text-muted-foreground">{contactTexts("subtitle")}</p>
-      </Reveal>
+      </div>
 
       <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_1.4fr]">
-        <Reveal delay={0.1}>
+        <div>
           <WaveCard className="h-full">
             <h2 className="font-display text-2xl font-medium text-signal">
               {contactTexts("infoTitle")}
@@ -102,16 +101,16 @@ export default async function ContactPage() {
               </ul>
             </div>
           </WaveCard>
-        </Reveal>
+        </div>
 
-        <Reveal delay={0.2}>
+        <div>
           <WaveCard className="h-full">
             <h2 className="font-display text-2xl font-medium text-signal">
               {contactTexts("formTitle")}
             </h2>
             <ContactForm />
           </WaveCard>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

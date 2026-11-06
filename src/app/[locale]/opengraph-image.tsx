@@ -30,7 +30,6 @@ export default async function OpenGraphImage({ params }: { params: Promise<{ loc
           color: COLORS.foreground,
         }}
       >
-        <div style={{ fontSize: 30, color: COLORS.signal }}>{hero.greeting}</div>
         <div style={{ fontSize: 108, fontWeight: 600, letterSpacing: -3, lineHeight: 1.05 }}>{hero.name}</div>
         <div style={{ fontSize: 40, color: COLORS.muted, marginTop: 12 }}>{hero.role}</div>
         <div style={{ fontSize: 28, color: COLORS.muted, marginTop: 28 }}>{hero.tagline}</div>

@@ -21,7 +21,6 @@
     "close": "Close menu"
   },
   "hero": {
-    "greeting": "Hi, I'm",
     "name": "Jhonier Santana",
     "role": "Fullstack Software Developer",
     "tagline": "React · React Native · Node.js · TypeScript",
@@ -32,14 +31,20 @@
     "availability": "Open to new opportunities"
   },
   "experience": {
-    "title": "Experience",
-    "current": "Current",
+    "title": "My experience",
+    "intro": "The teams and products I've worked on, from the latest to the first.",
+    "present": "Present",
+    "years": "{count, plural, one {# year} other {# years}}",
+    "months": "{count, plural, one {# month} other {# months}}",
+    "and": " and ",
+    "total": "of professional experience",
+    "jump": "Go to {role} at {company} ({year})",
     "items": [
       {
+        "id": "bartik",
         "role": "Software Developer",
         "company": "Seguridad Penta / Bartik",
         "location": "Bogotá, Colombia",
-        "period": "May 2025 - Present",
         "points": [
           "Led UX/UI improvements across a suite of 5 web, mobile and desktop applications, optimizing key workflows.",
           "Designed and implemented the frontend architecture of 4 SaaS applications, integrating REST APIs.",
@@ -47,10 +52,10 @@
         ]
       },
       {
+        "id": "attendv",
         "role": "Frontend Developer",
         "company": "Attendv / Betek",
         "location": "Medellín, Colombia",
-        "period": "May 2024 - October 2024",
         "points": [
           "Built a complete on-demand services web application with React and Firebase.",
           "Optimized app performance and SEO, improving load speed and search visibility.",
@@ -58,20 +63,20 @@
         ]
       },
       {
+        "id": "autonomic-mind",
         "role": "Software Developer (Freelance)",
         "company": "Autonomic Mind",
         "location": "Medellín, Colombia",
-        "period": "September 2023 - October 2023",
         "points": [
           "Built solutions across multiple languages (Dart, Kotlin, R, Lua) applying functional programming and recursion.",
           "Used Git version control in a collaborative environment."
         ]
       },
       {
+        "id": "holberton",
         "role": "Software Developer (Trainee)",
         "company": "Holberton School",
         "location": "Bogotá, Colombia",
-        "period": "September 2022 - July 2023",
         "points": [
           "Built full-stack projects with React, Python (Flask) and MySQL.",
           "Applied unit and integration testing to ensure code quality and robustness.",
@@ -141,7 +146,7 @@
       { "value": "100+", "label": "logic and data structure challenges" }
     ],
     "impact": {
-      "title": "Experience and impact",
+      "title": "Achievements and impact",
       "current": "Current",
       "items": [
         {
@@ -203,6 +208,37 @@
               "text": "Built end-to-end applications with React, Python (Flask) and MySQL, reinforcing unit and integration testing and solving over 100 logic and data structure challenges."
             }
           ]
+        }
+      ]
+    },
+    "route": {
+      "title": "My route",
+      "intro": "Where the teams I've built with have been based, starting from my hometown.",
+      "cities": {
+        "socorro": "Socorro",
+        "bogota": "Bogotá",
+        "medellin": "Medellín"
+      },
+      "stops": [
+        {
+          "id": "home",
+          "label": "My hometown",
+          "detail": "Socorro, Santander. My hometown and the place I work from today."
+        },
+        {
+          "id": "holberton",
+          "label": "Holberton School",
+          "detail": "Intensive software developer training, with fullstack projects in React, Flask and MySQL."
+        },
+        {
+          "id": "medellin",
+          "label": "Autonomic Mind · Attendv / Betek",
+          "detail": "Freelance work and my first frontend developer role: a web app built with React and Firebase."
+        },
+        {
+          "id": "bartik",
+          "label": "Seguridad Penta / Bartik",
+          "detail": "Current role: building and evolving the frontend architecture of 4 SaaS applications, and implementing and improving UX/UI design across a suite of 5 web, mobile and desktop applications."
         }
       ]
     },

@@ -101,6 +101,13 @@
   html {
     @apply font-sans;
     color-scheme: dark;
+    /* Browser surfaces carry the brand too: scrollbar, caret, text selection. */
+    scrollbar-color: color-mix(in oklch, var(--signal) 45%, transparent) var(--background);
+    caret-color: var(--signal);
+  }
+  ::selection {
+    background-color: color-mix(in oklch, var(--signal) 35%, transparent);
+    color: var(--foreground);
   }
   .font-display {
     font-variation-settings: "SOFT" 60, "WONK" 1;
