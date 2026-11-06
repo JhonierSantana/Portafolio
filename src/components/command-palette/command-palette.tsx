@@ -21,7 +21,10 @@ function filterCommands(commands: Command[], query: string) {
   });
 }
 
-/** Ctrl/⌘ + K palette: jump to pages, run actions and a few playful extras. Loaded on first open. */
+/**
+ * Ctrl/⌘ + K palette: jump to pages, run actions and a few playful extras. Loaded on first open.
+ * It opens and closes without animation: a keyboard tool used often should feel instant.
+ */
 export function CommandPalette({ open, onOpenChange }: { open: boolean; onOpenChange: (open: boolean) => void }) {
   const paletteTexts = useTranslations("palette");
   const commands = useCommands();
@@ -64,8 +67,8 @@ export function CommandPalette({ open, onOpenChange }: { open: boolean; onOpenCh
   return (
     <Dialog.Root open={open} onOpenChange={handleOpenChange}>
       <Dialog.Portal>
-        <Dialog.Backdrop className="fixed inset-0 z-120 bg-black/60 backdrop-blur-sm transition-opacity duration-200 data-ending-style:opacity-0 data-starting-style:opacity-0" />
-        <Dialog.Popup className="fixed left-1/2 top-[12vh] z-121 w-[min(36rem,calc(100vw-2rem))] -translate-x-1/2 overflow-hidden rounded-lg border border-border bg-card shadow-2xl shadow-signal/10 transition-[opacity,transform] duration-200 data-ending-style:-translate-y-2 data-ending-style:opacity-0 data-starting-style:-translate-y-2 data-starting-style:opacity-0">
+        <Dialog.Backdrop className="fixed inset-0 z-120 bg-black/60 backdrop-blur-sm" />
+        <Dialog.Popup className="fixed left-1/2 top-[12vh] z-121 w-[min(36rem,calc(100vw-2rem))] -translate-x-1/2 overflow-hidden rounded-lg border border-border bg-card shadow-2xl shadow-signal/10">
           <Dialog.Title className="sr-only">{paletteTexts("title")}</Dialog.Title>
           <div className="flex items-center gap-3 border-b border-border px-4">
             <Search aria-hidden className="size-4 shrink-0 text-muted-foreground" />

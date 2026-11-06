@@ -1,5 +1,4 @@
 import { useTranslations } from "next-intl";
-import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { WaveCard } from "@/components/ui/wave-card";
 import { IconMarquee } from "@/components/ui/icon-marquee";
 import { techIcons } from "@/lib/tech-icons";
@@ -45,33 +44,33 @@ export function SkillsGrid() {
 
   return (
     <section className="mx-auto max-w-5xl px-6 py-10">
-      <Reveal>
+      <div>
         <h2 className="font-display text-3xl font-medium tracking-tight text-signal">
           {skillsTexts("title")}
         </h2>
-      </Reveal>
-      <RevealGroup className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <RevealItem className="min-w-0 sm:col-span-2">
+      </div>
+      <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="min-w-0 sm:col-span-2">
           <WaveCard className="py-2!">
             <CardTitle>{skillsTexts("frontBackTitle")}</CardTitle>
             <div className="mt-3">
               <IconMarquee names={withIcon([...frontend.items, ...backend.items])} />
             </div>
           </WaveCard>
-        </RevealItem>
-        <RevealItem className="min-w-0">
+        </div>
+        <div className="min-w-0">
           <WaveCard className="py-2!">
             <CardTitle>{skillsTexts("stateQaTitle")}</CardTitle>
             <IconRow items={[...state.items, ...testing.items]} fiveOnLarge />
           </WaveCard>
-        </RevealItem>
-        <RevealItem className="min-w-0">
+        </div>
+        <div className="min-w-0">
           <WaveCard className="py-2!">
             <CardTitle>{tools.label}</CardTitle>
             <IconRow items={tools.items} />
           </WaveCard>
-        </RevealItem>
-      </RevealGroup>
+        </div>
+      </div>
     </section>
   );
 }

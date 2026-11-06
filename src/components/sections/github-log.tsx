@@ -1,6 +1,5 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import { BookPlus, GitBranch, GitCommitHorizontal, GitMerge, GitPullRequest, GitPullRequestClosed, Tag, type LucideIcon } from "lucide-react";
-import { Reveal } from "@/components/motion/reveal";
 import { WaveCard } from "@/components/ui/wave-card";
 import { contactInfo } from "@/lib/contact-info";
 import { getGithubLog, type LogEntryKind } from "@/lib/github-log";
@@ -38,11 +37,11 @@ export async function GithubLog() {
 
   return (
     <section className="mx-auto max-w-5xl px-6 py-10">
-      <Reveal>
+      <div>
         <h2 className="font-display text-3xl font-medium tracking-tight text-signal">{logTexts("title")}</h2>
         <p className="mt-2 text-muted-foreground">{logTexts("subtitle")}</p>
-      </Reveal>
-      <Reveal className="mt-6" delay={0.1}>
+      </div>
+      <div className="mt-6">
         <WaveCard className="py-2!">
           <ol className="divide-y divide-border">
             {entries.map((entry) => {
@@ -81,7 +80,7 @@ export async function GithubLog() {
             {logTexts("profile")} →
           </a>
         </WaveCard>
-      </Reveal>
+      </div>
     </section>
   );
 }

@@ -44,7 +44,7 @@ export function DepthGauge() {
         style={{ y: gaugeY }}
         className="absolute right-2 top-0 hidden flex-col items-end rounded-sm border border-signal/40 bg-background px-2 py-1 font-data leading-tight md:flex"
       >
-        <span ref={depthRef} className="text-xs text-signal">
+        <span ref={depthRef} className="text-xs text-signal tabular-nums">
           {depthAt(0)}
         </span>
         <span ref={zoneRef} className="text-[0.65rem] uppercase tracking-wider text-muted-foreground">

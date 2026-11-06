@@ -4,7 +4,6 @@ import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { WaveCard } from "@/components/ui/wave-card";
-import { Reveal } from "@/components/motion/reveal";
 
 /**
  * Case studies are still being written, so the listing is replaced by an "in progress" notice.
@@ -16,14 +15,14 @@ export default async function ProjectsPage() {
 
   return (
     <section className="mx-auto max-w-5xl px-6 py-16">
-      <Reveal>
+      <div>
         <h1 className="font-display text-4xl font-medium tracking-tight text-signal sm:text-5xl">
           {projectsTexts("title")}
         </h1>
         <p className="mt-3 max-w-xl text-muted-foreground">{projectsTexts("subtitle")}</p>
-      </Reveal>
+      </div>
 
-      <Reveal className="mt-10" delay={0.1}>
+      <div className="mt-10">
         <WaveCard>
           <div
             role="status"
@@ -54,7 +53,7 @@ export default async function ProjectsPage() {
             </div>
           </div>
         </WaveCard>
-      </Reveal>
+      </div>
     </section>
   );
 }
