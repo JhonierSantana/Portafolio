@@ -28,11 +28,20 @@ const outDirFlag = process.argv.indexOf("--out-dir");
 const OUT_DIR = outDirFlag > -1 ? path.resolve(process.argv[outDirFlag + 1]) : path.join(ROOT, "dist-cv");
 const ACCENT = "1F4E8C";
 
-/** Two short lines, so no URL is ever split across lines. */
+/**
+ * Contact details as short lines of parts ({ text, href?, label? }), so no URL is ever split across
+ * lines. The portfolio gets its own line because its address is long.
+ */
 const contactLines = ({ contact }) => [
-  [contact.location, contact.phone, contact.email],
-  [contact.linkedin, contact.github, contact.portfolio].filter(Boolean),
+  [{ text: contact.location }, { text: contact.phone }, { text: contact.email, href: `mailto:${contact.email}` }],
+  [
+    { text: contact.linkedin, href: `https://www.${contact.linkedin}` },
+    { text: contact.github, href: `https://${contact.github}` },
+  ],
+  [{ label: contact.portfolio.label, text: contact.portfolio.url, href: `https://${contact.portfolio.url}` }],
 ];
+
+const partText = ({ label, text }) => (label ? `${label}: ${text}` : text);
 
 // ---------------------------------------------------------------- PDF (HTML printed by Chromium)
 
@@ -41,15 +50,14 @@ const escapeHtml = (text) =>
 
 function renderHtml(data) {
   const { contact, sections } = data;
-  const links = new Map([
-    [contact.email, `mailto:${contact.email}`],
-    [contact.linkedin, `https://www.${contact.linkedin}`],
-    [contact.github, `https://${contact.github}`],
-    ...(contact.portfolio ? [[contact.portfolio, `https://${contact.portfolio}`]] : []),
-  ]);
   const contactHtml = contactLines(data)
     .map((line) =>
-      line.map((part) => (links.has(part) ? `<a href="${links.get(part)}">${escapeHtml(part)}</a>` : escapeHtml(part))).join(" | "),
+      line
+        .map((part) => {
+          const text = part.href ? `<a href="${part.href}">${escapeHtml(part.text)}</a>` : escapeHtml(part.text);
+          return part.label ? `${escapeHtml(part.label)}: ${text}` : text;
+        })
+        .join(" | "),
     )
     .join("<br>");
 
@@ -150,7 +158,7 @@ function renderDocx(data) {
     new Paragraph({ children: [run(contact.name, { bold: true, size: 40, color: "111827" })] }),
     new Paragraph({ spacing: { before: 40 }, children: [run(data.headline, { bold: true, size: 21, color: ACCENT })] }),
     ...contactLines(data).map(
-      (line, index) => new Paragraph({ spacing: { before: index ? 0 : 60 }, children: [run(line.join(" | "), { size: 17 })] }),
+      (line, index) => new Paragraph({ spacing: { before: index ? 0 : 60 }, children: [run(line.map(partText).join(" | "), { size: 17 })] }),
     ),
     heading(sections.summary),
     new Paragraph({ children: [run(data.summary)] }),

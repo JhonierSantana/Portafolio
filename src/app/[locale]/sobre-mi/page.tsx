@@ -1,13 +1,11 @@
 import type { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
 import type { CityId } from "@/lib/route";
+import { Achievements } from "@/components/sections/achievements";
 import { RouteMap } from "@/components/sections/route-map";
 import { AvatarRing } from "@/components/sections/avatar-ring";
 import { WaveCard } from "@/components/ui/wave-card";
 
-type Stat = { value: string; label: string };
-type ImpactPoint = { lead: string; text: string };
-type ImpactItem = { role: string; company: string; period: string; points: ImpactPoint[] };
 type RouteStopText = { id: string; label: string; detail: string };
 type EducationItem = { title: string; institution: string; date: string };
 type LanguageItem = { language: string; level: string };
@@ -24,8 +22,6 @@ function SectionTitle({ children }: { children: ReactNode }) {
 
 export default async function AboutPage() {
   const aboutTexts = await getTranslations("about");
-  const stats = aboutTexts.raw("stats") as Stat[];
-  const impactItems = aboutTexts.raw("impact.items") as ImpactItem[];
   const lessons = aboutTexts.raw("philosophy.lessons") as string[];
   const educationItems = aboutTexts.raw("educationItems") as EducationItem[];
   const languageItems = aboutTexts.raw("languageItems") as LanguageItem[];
@@ -51,23 +47,6 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-5xl px-6 py-6">
-        <div>
-          <WaveCard>
-            <ul className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4">
-              {stats.map((stat) => (
-                <li key={stat.label}>
-                  <p className="font-display text-4xl font-medium text-signal sm:text-5xl">
-                    {stat.value}
-                  </p>
-                  <p className="mt-1 text-sm leading-snug text-muted-foreground">{stat.label}</p>
-                </li>
-              ))}
-            </ul>
-          </WaveCard>
-        </div>
-      </section>
-
       <RouteMap
         title={aboutTexts("route.title")}
         intro={aboutTexts("route.intro")}
@@ -75,30 +54,7 @@ export default async function AboutPage() {
         stops={routeStops}
       />
 
-      <section className="mx-auto max-w-5xl px-6 py-10">
-        <SectionTitle>{aboutTexts("impact.title")}</SectionTitle>
-        <div className="mt-8">
-          <WaveCard>
-            <ul className="grid gap-x-12 gap-y-8 md:grid-cols-2">
-              {impactItems.map((item) => (
-                <li key={`${item.company}-${item.period}`}>
-                  <p className="font-data text-xs text-muted-foreground">{item.period}</p>
-                  <h3 className="mt-1 text-lg font-medium">{item.role}</h3>
-                  <p className="text-sm text-signal">{item.company}</p>
-                  <ul className="mt-3 space-y-3">
-                    {item.points.map((point) => (
-                      <li key={point.lead} className="text-sm leading-relaxed text-muted-foreground">
-                        <span className="font-medium text-foreground">{point.lead}. </span>
-                        {point.text}
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              ))}
-            </ul>
-          </WaveCard>
-        </div>
-      </section>
+      <Achievements />
 
       <section className="py-10">
         <WaveCard bleed>

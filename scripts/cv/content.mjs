@@ -10,14 +10,16 @@ const contact = {
   email: "jhonier_2504@hotmail.com",
   linkedin: "linkedin.com/in/jhonier-yesid-santana-pedroza-457492265",
   github: "github.com/JhonierSantana",
-  /** Shown only once the site has a public domain (same variable the site uses). */
-  portfolio: process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/^https?:\/\//, "").replace(/\/+$/, "") || null,
 };
+
+/** Public portfolio (Vercel). Each CV links to the portfolio in its own language. */
+const PORTFOLIO_HOST = "my-portafolio-jhoniersantanas-projects.vercel.app";
+const portfolioUrl = (lang) => `${PORTFOLIO_HOST}/${lang}`;
 
 export const cv = {
   es: {
     lang: "es",
-    contact: { ...contact, location: "Socorro, Santander, Colombia" },
+    contact: { ...contact, location: "Socorro, Santander, Colombia", portfolio: { label: "Portafolio", url: portfolioUrl("es") } },
     headline: "Desarrollador de Software Fullstack | React | React Native | Node.js | TypeScript | IA (Claude Code)",
     sections: {
       summary: "Perfil profesional",
@@ -91,7 +93,7 @@ export const cv = {
 
   en: {
     lang: "en",
-    contact: { ...contact, location: "Socorro, Santander, Colombia" },
+    contact: { ...contact, location: "Socorro, Santander, Colombia", portfolio: { label: "Portfolio", url: portfolioUrl("en") } },
     headline: "Fullstack Software Developer | React | React Native | Node.js | TypeScript | AI (Claude Code)",
     sections: {
       summary: "Professional Summary",
