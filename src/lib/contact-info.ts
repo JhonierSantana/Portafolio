@@ -1,6 +1,6 @@
 /** Single source of truth for personal contact data (Hero, footer, Contact page). */
 export const contactInfo = {
-  email: "jhonier_2504@hotmail.com",
+  email: "jhonieryesidsantanapedrozq@gmail.com",
   phone: "+57 321 547 7347",
   phoneHref: "tel:+573215477347",
   location: "Socorro, Santander, CO",

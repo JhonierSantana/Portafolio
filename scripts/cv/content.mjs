@@ -7,7 +7,7 @@
 const contact = {
   name: "Jhonier Yesid Santana Pedroza",
   phone: "+57 321 547 7347",
-  email: "jhonier_2504@hotmail.com",
+  email: "jhonieryesidsantanapedrozq@gmail.com",
   linkedin: "linkedin.com/in/jhonier-yesid-santana-pedroza-457492265",
   github: "github.com/JhonierSantana",
 };
